@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maternal, Newborn, Child & Youth Network – Resources</title>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─────────────────────────────────────────────
+       TOKENS
+    ───────────────────────────────────────────── */
+    :root {
+      --teal: #1e7b7b;
+      --teal-dark: #155858;
+      --teal-light: #e4f4f2;
+      --teal-mid: #c0e6e3;
+
+      --clay: #c2603b;
+      --clay-dark: #9e4527;
+      --clay-light: #f5e8e2;
+
+      --navy: #152535;
+      --navy-mid: #1e3a52;
+
+      --ink: #1c2730;
+      --smoke: #5a6a72;
+      --fog: #8d9ea6;
+
+      --paper: #faf8f5;
+      --linen: #f2ede6;
+      --white: #ffffff;
+
+      --ff-head: "Fraunces", Georgia, serif;
+      --ff-body: "Work Sans", system-ui, sans-serif;
+
+      --r-sm: 6px;
+      --r-md: 14px;
+      --r-lg: 24px;
+      --r-xl: 36px;
+
+      --sh-card: 0 2px 8px rgba(21, 37, 53, 0.06), 0 8px 28px rgba(21, 37, 53, 0.07);
+      --sh-lg: 0 12px 48px rgba(21, 37, 53, 0.14);
+
+      --mw: 1220px;
+      --px: clamp(1.25rem, 5vw, 3rem);
+    }
+
+    /* RESET */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; font-family: inherit; }
+    .wrap { max-width: var(--mw); margin: 0 auto; padding: 0 var(--px); }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--ff-body);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: .55rem;
+    }
+    .section-eyebrow::before {
+      content: "";
+      width: 20px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--clay);
+      display: block;
+    }
+
+    .page-title {
+      font-family: var(--ff-head);
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: -.02em;
+      color: var(--navy);
+      line-height: 1.08;
+    }
+
+    .muted { color: var(--smoke); }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .35rem .7rem;
+      border-radius: 999px;
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(0,0,0,.06);
+      background: rgba(255,255,255,.7);
+    }
+    .pill-teal {
+      color: var(--teal-dark);
+      background: rgba(30,123,123,.10);
+      border-color: rgba(30,123,123,.16);
+    }
+    .pill-clay {
+      color: var(--clay-dark);
+      background: rgba(194,96,59,.10);
+      border-color: rgba(194,96,59,.16);
+    }
+    .pill-navy {
+      color: var(--navy);
+      background: rgba(21,37,53,.08);
+      border-color: rgba(21,37,53,.10);
+    }
+
+    /* ─────────────────────────────────────────────
+       HEADER
+    ───────────────────────────────────────────── */
+    #header {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      background: rgba(250,248,245,.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(30,123,123,.12);
+      transition: box-shadow .25s;
+    }
+    #header.scrolled {
+      box-shadow: 0 2px 20px rgba(21,37,53,.10);
+    }
+
+    .header-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      font-family: var(--ff-head);
+      font-size: 1.12rem;
+      font-weight: 600;
+      letter-spacing: -.015em;
+    }
+
+    .brand-sub {
+      font-size: .74rem;
+      font-weight: 600;
+      color: var(--smoke);
+      letter-spacing: .02em;
+      margin-top: .15rem;
+      max-width: 300px;
+    }
+
+    .primary-nav {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: .2rem;
+      flex-wrap: wrap;
+    }
+
+    .primary-nav a {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--smoke);
+      padding: .45rem .7rem;
+      border-radius: var(--r-sm);
+      transition: color .18s, background .18s;
+      white-space: nowrap;
+    }
+
+    .primary-nav a:hover {
+      color: var(--teal-dark);
+      background: var(--teal-light);
+    }
+
+    .primary-nav a.active {
+      color: var(--teal-dark);
+      background: var(--teal-light);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4.5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      margin-left: auto;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+    }
+
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      justify-content: flex-end;
+    }
+    .mobile-overlay.show { display: flex; }
+
+    .overlay-bg {
+      position: absolute;
+      inset: 0;
+      background: rgba(21,37,53,.5);
+    }
+
+    .drawer {
+      position: relative;
+      z-index: 1;
+      width: 290px;
+      max-width: 86vw;
+      height: 100%;
+      background: var(--paper);
+      padding: 1.5rem;
+      overflow-y: auto;
+      box-shadow: var(--sh-lg);
+      display: flex;
+      flex-direction: column;
+      gap: .15rem;
+    }
+
+    .drawer-close {
+      align-self: flex-end;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      color: var(--smoke);
+      margin-bottom: .5rem;
+    }
+
+    .drawer a {
+      display: block;
+      padding: .7rem .8rem;
+      border-radius: var(--r-sm);
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .drawer a:hover,
+    .drawer a.active {
+      background: var(--teal-light);
+      color: var(--teal-dark);
+    }
+
+    /* ─────────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────────── */
+    #hero {
+      padding: clamp(3rem, 6vw, 4.8rem) 0 clamp(2rem, 5vw, 3rem);
+      background: var(--paper);
+    }
+
+    .hero-card {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-side {
+      background: var(--white);
+      border: 1px solid rgba(30,123,123,.12);
+      border-radius: var(--r-lg);
+      box-shadow: var(--sh-card);
+    }
+
+    .hero-copy {
+      padding: clamp(1.6rem, 4vw, 2.5rem);
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2rem, 4.4vw, 3.2rem);
+      margin-bottom: .85rem;
+    }
+
+    .hero-copy p {
+      max-width: 60ch;
+      color: var(--smoke);
+    }
+
+    .hero-side {
+      padding: 1.4rem;
+    }
+
+    .search-title {
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--fog);
+      margin-bottom: .8rem;
+    }
+
+    .search-row {
+      position: relative;
+    }
+
+    .search-row input {
+      width: 100%;
+      height: 48px;
+      border-radius: 999px;
+      border: 1.8px solid rgba(30,123,123,.22);
+      padding: 0 1rem 0 2.8rem;
+      font-size: .95rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .search-row input:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(30,123,123,.10);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--teal);
+      pointer-events: none;
+    }
+
+    .jump-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+
+    .jump-link {
+      display: flex;
+      flex-direction: column;
+      gap: .2rem;
+      padding: .95rem 1rem;
+      border-radius: var(--r-md);
+      border: 1px solid rgba(21,37,53,.08);
+      background: var(--paper);
+      transition: transform .16s, box-shadow .16s, border-color .16s;
+    }
+
+    .jump-link:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--sh-card);
+      border-color: rgba(30,123,123,.22);
+    }
+
+    .jump-link strong {
+      font-family: var(--ff-head);
+      font-style: italic;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .jump-link span {
+      font-size: .79rem;
+      color: var(--fog);
+      font-weight: 500;
+    }
+
+    /* ─────────────────────────────────────────────
+       CONTENT
+    ───────────────────────────────────────────── */
+    #content {
+      padding: clamp(2.3rem, 6vw, 4.5rem) 0;
+      background: var(--linen);
+      border-top: 1px solid rgba(21,37,53,.06);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .section-card {
+      background: var(--white);
+      border: 1px solid rgba(30,123,123,.12);
+      border-radius: var(--r-lg);
+      box-shadow: var(--sh-card);
+      overflow: hidden;
+    }
+
+    .section-head {
+      padding: 1.35rem 1.35rem .8rem;
+    }
+
+    .section-head h2 {
+      margin-top: .4rem;
+      font-family: var(--ff-head);
+      font-style: italic;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.15;
+    }
+
+    .section-head p {
+      margin-top: .65rem;
+      color: var(--smoke);
+      max-width: 78ch;
+    }
+
+    .section-body {
+      padding: 0 1.35rem 1.35rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       ACCORDION
+    ───────────────────────────────────────────── */
+    .accordion {
+      border: 1px solid rgba(21,37,53,.06);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      background: var(--white);
+      margin-top: .9rem;
+    }
+
+    .accordion-item + .accordion-item {
+      border-top: 1px solid rgba(21,37,53,.06);
+    }
+
+    .accordion-toggle {
+      width: 100%;
+      border: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.1rem;
+      text-align: left;
+      color: var(--navy);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .accordion-label {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      min-width: 0;
+    }
+
+    .accordion-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--teal-mid);
+      flex-shrink: 0;
+    }
+
+    .accordion-dot.clay { background: #e4c1b4; }
+    .accordion-dot.navy { background: #b8c3ce; }
+
+    .accordion-arrow {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(0,0,0,.06);
+      background: rgba(250,248,245,.8);
+      color: var(--smoke);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      transition: transform .18s ease;
+    }
+
+    .accordion-item.open .accordion-arrow {
+      transform: rotate(90deg);
+    }
+
+    .accordion-content {
+      display: none;
+      border-top: 1px solid rgba(0,0,0,.06);
+      padding: 1rem 1.1rem 1.15rem;
+    }
+
+    .accordion-item.open .accordion-content {
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────────
+       LISTS
+    ───────────────────────────────────────────── */
+    .linklist {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .linkitem,
+    .locked-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .82rem .95rem;
+      border-radius: var(--r-md);
+      border: 1px solid rgba(30,123,123,.10);
+      background: var(--white);
+    }
+
+    .linkitem {
+      transition: transform .16s, box-shadow .16s, border-color .16s;
+    }
+
+    .linkitem:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--sh-card);
+      border-color: rgba(30,123,123,.22);
+    }
+
+    .linkmeta {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .12rem;
+    }
+
+    .linkmeta strong {
+      font-size: .94rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .linkmeta span {
+      font-size: .79rem;
+      color: var(--fog);
+      font-weight: 500;
+    }
+
+    .tagpdf,
+    .tagweb,
+    .taglock {
+      flex-shrink: 0;
+      padding: .35rem .58rem;
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .tagpdf {
+      color: var(--navy);
+      background: rgba(21,37,53,.06);
+      border: 1px solid rgba(21,37,53,.12);
+    }
+
+    .tagweb {
+      color: var(--teal-dark);
+      background: rgba(30,123,123,.10);
+      border: 1px solid rgba(30,123,123,.16);
+    }
+
+    .taglock {
+      color: var(--clay-dark);
+      background: rgba(194,96,59,.10);
+      border: 1px solid rgba(194,96,59,.16);
+    }
+
+    .note-box {
+      margin-top: .9rem;
+      padding: 1rem 1.05rem;
+      border-radius: var(--r-md);
+      background: rgba(30,123,123,.06);
+      border: 1px solid rgba(30,123,123,.10);
+      color: var(--smoke);
+      font-size: .92rem;
+    }
+
+    .split-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .5rem 1rem;
+    }
+
+    .split-list .linkitem {
+      min-width: 0;
+    }
+
+    /* ─────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────── */
+    #footer {
+      background: var(--navy);
+      padding: clamp(2.5rem, 5vw, 4rem) 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 2.2rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .footer-brand h3 {
+      font-family: var(--ff-head);
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: .85rem;
+    }
+
+    .footer-brand p,
+    .footer-col a {
+      color: rgba(255,255,255,.55);
+      font-size: .86rem;
+    }
+
+    .footer-col h4 {
+      color: rgba(255,255,255,.32);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: .9rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+    }
+
+    .footer-col a:hover,
+    .footer-brand a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom p {
+      color: rgba(255,255,255,.35);
+      font-size: .78rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .hero-card { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 900px) {
+      .primary-nav { display: none; }
+      .hamburger { display: flex; }
+      .split-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .jump-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .header-wrap { min-height: 70px; }
+      .brand-sub { max-width: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-overlay" id="drawer">
+    <div class="overlay-bg" id="drawerBg"></div>
+    <nav class="drawer" aria-label="Mobile navigation">
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+      <a href="index.html#who-we-are">Who We Are</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#membership">Membership</a>
+      <a href="index.html#education">Education</a>
+      <a href="resources.html" class="active">Resources</a>
+      <a href="index.html#events">Events</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="wrap header-wrap">
+      <a href="index.html" class="brand" aria-label="Maternal, Newborn, Child & Youth Network home">
+        <span class="brand-mark">Maternal, Newborn, Child &amp; Youth Network</span>
+        <span class="brand-sub">Regional resources for perinatal and paediatric care</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="index.html#who-we-are">Who We Are</a>
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#membership">Membership</a>
+        <a href="index.html#education">Education</a>
+        <a href="resources.html" class="active" aria-current="page">Resources</a>
+        <a href="index.html#events">Events</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="wrap hero-card">
+        <div class="hero-copy">
+          <p class="section-eyebrow">Resource library</p>
+          <h1 class="page-title">Resources for providers and partners</h1>
+          <p>
+            Access local documents, clinical forms, partner-only materials, and trusted external links that support
+            perinatal and paediatric care across the region.
+          </p>
+        </div>
+
+        <div class="hero-side">
+          <div class="search-title">Search the library</div>
+          <div class="search-row">
+            <span class="search-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input id="globalSearch" type="search" placeholder="Search measles, forms, links..." aria-label="Search resources" />
+          </div>
+
+          <div class="jump-grid">
+            <a class="jump-link" href="#partner">
+              <strong>Partner Resources</strong>
+              <span>Secure portal materials</span>
+            </a>
+            <a class="jump-link" href="#measles">
+              <strong>Measles Resources</strong>
+              <span>Local PDFs and updates</span>
+            </a>
+            <a class="jump-link" href="#competency">
+              <strong>Competency Tools</strong>
+              <span>Partner-only downloads</span>
+            </a>
+            <a class="jump-link" href="#forms">
+              <strong>Forms &amp; Guidelines</strong>
+              <span>Local clinical PDFs</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section id="content">
+      <div class="wrap content-grid">
+
+        <!-- PARTNER RESOURCES -->
+        <section class="section-card" id="partner" data-search>
+          <div class="section-head">
+            <span class="pill pill-clay">Partner Resources</span>
+            <h2>Partner Resources</h2>
+            <p>
+              Some resources remain restricted to MNCYN partner access.
+            </p>
+          </div>
+
+          <div class="section-body">
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-toggle" type="button">
+                  <span class="accordion-label">
+                    <span class="accordion-dot clay"></span>
+                    <span>Open Partner Resources</span>
+                  </span>
+                  <span class="accordion-arrow">›</span>
+                </button>
+                <div class="accordion-content">
+                  <div class="linklist">
+                    <div class="locked-item" data-search>
+                      <div class="linkmeta">
+                        <strong>Partner Resource Portal</strong>
+                        <span>Available only to authorized partners</span>
+                      </div>
+                      <span class="taglock">Portal</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- MEASLES RESOURCES -->
+        <section class="section-card" id="measles" data-search>
+          <div class="section-head">
+            <span class="pill pill-teal">Updated March 27, 2025</span>
+            <h2>Measles Resources</h2>
+          </div>
+
+          <div class="section-body">
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-toggle" type="button">
+                  <span class="accordion-label">
+                    <span class="accordion-dot"></span>
+                    <span>Open Measles Resources</span>
+                  </span>
+                  <span class="accordion-arrow">›</span>
+                </button>
+                <div class="accordion-content">
+                  <div class="linklist">
+                    <a class="linkitem" href="content/resources/Measles-Resources/Measles-Guidance-for-Patients.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Measles Post-Exposure Guidance Sheet for patients</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/Outpatient-Care-Flow-Map.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                          <strong>LHSC – Emergency Department Screening Flow Map</strong>
+                          <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/Inpatient-Unit-Flow-Map.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>LHSC – Inpatient Unit Measles Flow Map</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/Outpatient-Care-Flow-Map.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>LHSC – Outpatient Care Measles Flow Map</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/IVIG-Clinic-Process-Map.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>LHSC – IVIg Clinic Measles Flow Map</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/Womens-measles-screening.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>LHSC Women’s Care – Measles Screening Tool</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/Feb-2025-OBCU-Womens-Measles-Screening.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>LHSC OBCU Triage for Measles Slides – Feb 2025</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/OBCU-Measles-Flow-Feb2025.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>LHSC OBCU Measles Process Map – Feb 2025</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/Measles-QA-Mar2025.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>LHSC Measles Q&amp;A</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/Measles-Guidance-for-Patients.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>LHSC Patient Fact Sheet – Measles</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/Management-MotherBaby-Measles-Mar2025.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>LHSC Management of Mother and Newborn – Measles</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/Low-GermanEnglish-OB-Clinic-Poster-11-x-17.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Low German/English OB Clinic Poster – 11×17 (STEGH)</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/Low-GermanEnglish-Measles-Prenatal-Pkg-Clinic-8.5-x-11.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>St. Thomas Elgin Hospital Low German/English Measles Clinic Flyer – 8.5×11</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/Measles-materials-shared-by-Hamilton-Health-Sciences-March-2025.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Hamilton Health Sciences – Measles Materials</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="https://www.publichealthontario.ca/en/Diseases-and-Conditions/Infectious-Diseases/Vaccine-Preventable-Diseases/Measles" target="_blank" rel="noopener noreferrer" data-search>
+                      <div class="linkmeta">
+                        <strong>Public Health Ontario – Measles Information</strong>
+                        <span>External website</span>
+                      </div>
+                      <span class="tagweb">Web</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Measles-Resources/Measles-Fact-Sheet.pdf" target="_blank" rel="noopener noreferrer" data-search>
+                        <div class="linkmeta">
+                          <strong>PCMCH Measles Fact Sheet – IPHCC</strong>
+                          <span>PDF</span>
+                        </div>
+                        <span class="tagpdf">PDF</span>
+                      
+                    </a>
+                  </div>
+
+                  <div class="note-box">
+                    <strong>Ontario Health – First Five</strong><br />
+                    Access to preventative and health promotion care and services for children aged 0 to 5 years in Ontario,
+                    specifically for those without access to primary care and/or without a health card.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NURSE COMPETENCY TOOLS -->
+        <section class="section-card" id="competency" data-search>
+          <div class="section-head">
+            <span class="pill pill-navy">Nurse Competency Tools</span>
+            <h2>Nurse Competency Tools</h2>
+            <p>
+              This section remains visible for structure and content continuity, but the actual downloads are still limited to
+              the secure partner portal.
+            </p>
+          </div>
+
+          <div class="section-body">
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-toggle" type="button">
+                  <span class="accordion-label">
+                    <span class="accordion-dot"></span>
+                    <span>Perinatal Competency Indicator Tools</span>
+                  </span>
+                  <span class="accordion-arrow">›</span>
+                </button>
+                <div class="accordion-content">
+                  <p class="muted" style="margin-bottom:.8rem;">
+                    These tools were designed to support orientation, education, feedback, and skill development for nurses caring
+                    for mothers and newborns during the perinatal period.
+                  </p>
+                  <div class="linklist">
+                    <div class="locked-item" data-search>
+                      <div class="linkmeta">
+                        <strong>Download – Perinatal Competency Tool</strong>
+                        <span>This resource is only for MNCYN partners in the Resource Portal</span>
+                      </div>
+                      <span class="taglock">Portal</span>
+                    </div>
+                    <div class="locked-item" data-search>
+                      <div class="linkmeta">
+                        <strong>Download – Supporting Materials</strong>
+                        <span>This resource is only for MNCYN partners in the Resource Portal</span>
+                      </div>
+                      <span class="taglock">Portal</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-toggle" type="button">
+                  <span class="accordion-label">
+                    <span class="accordion-dot clay"></span>
+                    <span>Core Paediatric Competency Indicator Tool</span>
+                  </span>
+                  <span class="accordion-arrow">›</span>
+                </button>
+                <div class="accordion-content">
+                  <p class="muted" style="margin-bottom:.8rem;">
+                    Designed to help nurses build the knowledge and confidence needed to safely care for paediatric patients in urgent
+                    and emergent situations across the region.
+                  </p>
+                  <div class="linklist">
+                    <div class="locked-item" data-search>
+                      <div class="linkmeta">
+                        <strong>Download – Paediatric Competency Tool</strong>
+                        <span>This resource is only for MNCYN partners in the Resource Portal</span>
+                      </div>
+                      <span class="taglock">Portal</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FORMS & GUIDELINES -->
+        <section class="section-card" id="forms" data-search>
+          <div class="section-head">
+            <span class="pill pill-teal">Forms &amp; Guidelines</span>
+            <h2>Forms &amp; Guidelines</h2>
+          </div>
+
+          <div class="section-body">
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-toggle" type="button">
+                  <span class="accordion-label">
+                    <span class="accordion-dot navy"></span>
+                    <span>Open Forms &amp; Guidelines</span>
+                  </span>
+                  <span class="accordion-arrow">›</span>
+                </button>
+                <div class="accordion-content">
+                  <div class="split-list">
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/Ill-Newborn-Record_2022.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Ill-Newborn-Record_2022</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/PCMCH-Provincial-Maternal-Transfer-Record.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Maternal Transfer Record</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/Ill-Newborn-Record_Guidelines_2022.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Ill Newborn Record_Guidelines_2022</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/2016_Neonatal-Resuscitation-Record-and-Documentation-Key_combined.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Neonatal Resuscitation Record and Documentation Key 2016</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/Guidelines-for-Birth-Summary-2012.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Guidelines for Birth Summary 2012</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/Newborn-Admission-Discharge-Record-2012.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Newborn Admission Discharge Record 2012</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/Guidelines-for-Obstetric-Pre-Admission-Assessment-Record-2.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Guidelines for Obstetric Pre-Admission Assessment Record 2</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/Obstetrical-Pain-Management-Monitoring-Record.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Obstetrical Pain Management Monitoring Record</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/Guidelines-for-the-Completion-of-the-Obstetrical-Pain-Management-Monitoring-Record-2.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Guidelines for the Completion of the Obstetrical Pain Management Monitoring Record 2</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/Obstetrical-Pre-Admission-Assessment.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Obstetrical Pre-Admission Assessment</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/MNCYN-Suggested-List-of-Perinatal-Policies-Guidelines-Standards-of-Nursing-Care.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>MNCYN Suggested List of Perinatal Policies, Guidelines, Standards of Nursing Care</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/PCMCH_Acute_Neonatal_Transfer_Record-Feb_2014.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>PCMCH Acute Neonatal Transfer Record</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/Suggested-List-of-Paediatric-Policies-2020.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Suggested List of Paediatric Policies, Guidelines, Standards of Nursing Care</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/Summary-of-Birth-2012.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Summary of Birth 2012</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/Clinical_Handbook_Paediatric_Asthma_Updated_November_2021_May_2022_FINAL.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>Lung Health Foundation and PCMCH Updated Clinical Handbook for Paediatric Asthma (Clinical Handbook) November 2021</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                    <a class="linkitem" href="content/resources/Forms-Guidelines/Appendix_10_Provincial_Neonatal_Retro-transfer_Record-Sept_30_2013.pdf" target="_blank" data-search>
+                      <div class="linkmeta">
+                        <strong>The Provincial Neonatal Retro-transfer Record</strong>
+                        <span>Local PDF</span>
+                      </div>
+                      <span class="tagpdf">PDF</span>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- RESOURCE LINKS -->
+        <section class="section-card" id="resource-links" data-search>
+          <div class="section-head">
+            <span class="pill pill-navy">Resource Links</span>
+            <h2>Resource Links</h2>
+            <p>
+              External links below were pulled from the uploaded spreadsheet of hyperlinks and added directly into the page.
+            </p>
+          </div>
+
+          <div class="section-body">
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-toggle" type="button">
+                  <span class="accordion-label">
+                    <span class="accordion-dot navy"></span>
+                    <span>Open Resource Links</span>
+                  </span>
+                  <span class="accordion-arrow">›</span>
+                </button>
+                <div class="accordion-content">
+                  <div class="linklist">
+
+                    <a class="linkitem" href="https://www.youtube.com/watch?v=odD4aMBV37w" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>MNCYN Education Video: Management of Imminent Birth 2021</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.acornprogram.net/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Acute Care of at-Risk Newborns (ACoRN) Program</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.beststart.org/resources/index.html" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Best Start Resources</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.bornontario.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>BORN Ontario</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.cmnrp.ca/en/cmnrp/Home_p2974.html" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Champlain Maternal Newborn Regional Program</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://www.lhsc.on.ca/nicu/nicu-medication-manual" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>London Health Sciences Centre Online NICU Medication Manual</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.dontshake.org/purple-crying" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>National Center on Shaken Baby Syndrome (Period of Purple Crying)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.cps.ca/nrp-prn" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Neonatal Resuscitation Program (NRP)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.omama.com/en/index.asp" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>OMama Project (BORN Ontario)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.milkbankontario.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Ontario Human Milk Bank</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.ontariomidwives.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Ontario Midwives</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://www.pcmch.on.ca/wp-content/uploads/OPR_UserGuide_2018Update_Final_18-08-22.pdf" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Ontario Perinatal Record Users Guide</strong><span>External PDF</span></div><span class="tagpdf">PDF</span></a>
+                    <a class="linkitem" href="https://ontariodirectoryprenataleducation.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Ontario Directory of Prenatal Education</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.perinatalservicesbc.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Perinatal Services BC (PSBC)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://pailnetwork.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Pregnancy and Infant Loss Network (PAIL Network)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.pcmch.on.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Provincial Council for Maternal and Child Health (PCMCH)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://rnao.ca/connect/interest-groups/mcnig" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Registered Nurses Association of Ontario (RNAO) – Maternal Child Nurses Interest Group (MCNIG)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.capwhn.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>The Canadian Association of Perinatal and Women’s Health Nurses (CAPWHN)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.themothersprogram.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>The MotHERS Program (Mothers Health Education, Research and Screening)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://rcp.nshealth.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>The Reproductive Care Program of Nova Scotia</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://sogc.org/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>The Society of Obstetricians and Gynaecologists of Canada</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://youtu.be/OPKFF3fjRqM" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>OHW High Flow Algorithm Webinar</strong><span>External video</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://www.youtube.com/watch?v=5xVmqr9akO8&list=PL6ImavgHs-2KBwW2_QmZNG5hWLWD59ymy" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>MNCYN Education Videos: Paediatric Respiratory Therapy Simulation Video Series 2021</strong><span>External video</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://mncyn.ca/wp-content/uploads/2023/10/West-Region-HHFNCO2-Algorithm.pdf" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Ontario West Region: High Flow Working Group Algorithm for HHFNCO2</strong><span>External PDF</span></div><span class="tagpdf">PDF</span></a>
+                    <a class="linkitem" href="https://mncyn.ca/wp-content/uploads/2023/10/Heated-High-Flow-Webinar-Slides.pdf" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>HHFNCO2 Webinar Slides</strong><span>External PDF</span></div><span class="tagpdf">PDF</span></a>
+                    <a class="linkitem" href="https://mncyn.ca/wp-content/uploads/2023/11/Paediatric-QR-QuickPics.pdf" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>MNCYN Paediatric QR QuickPics</strong><span>External PDF</span></div><span class="tagpdf">PDF</span></a>
+                    <a class="linkitem" href="http://www.childrenshealthcarecanada.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Children’s Healthcare Canada</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.aap.org/en-us/Pages/Default.aspx" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>American Academy of Pediatrics (AAP)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.caccn.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Canadian Association of Critical Care Nurses (CACCN)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://caep.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Canadian Association of Emergency Physicians (CAEP)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.caphc.org/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Canadian Association of Paediatric Health Centres (CAPHC)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.diabetes.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Canadian Diabetes Association</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.cmha.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Canadian Mental Health Association</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.cps.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Canadian Paediatric Society (CPS)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.cvaa.info/HOME/tabid/203/Default.aspx" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Canadian Vascular Access Association</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://www.criticall.org/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>CritiCall Ontario</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.ena.org/Pages/default.aspx" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Emergency Nurses Association (ENA)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://resuscitation.heartandstroke.ca/courses/pals/description" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Heart &amp; Stroke Foundation of Canada – PALS course information</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.nedic.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>National Eating Disorder Information Centre (Canada)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://nena.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>National Emergency Nurses’ Affiliation (NENA)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.pcmch.on.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Provincial Council for Maternal and Child Health (PCMCH)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.chatham-kent.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Chatham-Kent Health Unit</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://www.publichealthgreybruce.on.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Grey Bruce Health Unit</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://www.hpph.ca/en/index.aspx" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Huron Perth Public Health</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.lambtonhealth.on.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Lambton Health Unit</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://www.healthunit.com/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Middlesex London Health Unit</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.pdhu.on.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Perth District Health Unit</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://www.publichealthontario.ca/en/Diseases-and-Conditions/Infectious-Diseases/Vaccine-Preventable-Diseases/Measles" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Public Health Ontario</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://www.swpublichealth.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Southwestern Public Health (formerly Elgin-St. Thomas Health Unit &amp; Oxford County Public Health)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.wechealthunit.org/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Windsor-Essex County Health Unit</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://www.sogc.org/en/about/what-we-do/indigenous-womens-health/en/content/about/indigenous-womens-health.aspx?hkey=e85746d2-eb7f-444b-a1c9-34748a448779" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>SOGC: Indigenous Women’s Health</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.lhsc.on.ca/About_Us/Trauma/Trauma_Prevention_Programs/IMPACT/index.htm" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>IMPACT: Impaired Minds Produce Actions Causing Trauma</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.edu.gov.on.ca/childcare/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Ontario Child Care and Early Years Information</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.rrhc.on.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Rural Response for Healthy Children</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.smokershelpline.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>Smoking Cessation in Pregnancy Programs</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.hpcentre.on.ca/all-services" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>The Huron-Perth Centre for Children and Youth</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="http://www.aboutkidshealth.ca/En/Pages/default.aspx" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>About Kids Health-Trusted Answers From SickKids</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://nedic.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>National Eating Disorder Information Centre (NEDIC)</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+                    <a class="linkitem" href="https://vegaeducation.mcmaster.ca/" target="_blank" rel="noopener noreferrer" data-search><div class="linkmeta"><strong>VEGA (Violence, Evidence, Guidance, and Action) Project</strong><span>External link</span></div><span class="tagweb">Web</span></a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Maternal, Newborn, Child &amp; Youth Network</h3>
+          <p>
+            Supporting access to regional education, resources, collaboration, and quality improvement across perinatal and paediatric care.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="index.html#who-we-are">Who We Are</a></li>
+            <li><a href="index.html#programs">Programs</a></li>
+            <li><a href="index.html#membership">Membership</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Offerings</h4>
+          <ul>
+            <li><a href="index.html#education">Education</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="index.html#events">Events</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="index.html#contact">Contact Us</a></li>
+            <li><a href="mailto:info@mncyn.ca">info@mncyn.ca</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Maternal, Newborn, Child &amp; Youth Network. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById("header");
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 8);
+    }, { passive: true });
+
+    const drawer = document.getElementById("drawer");
+    const hamburger = document.getElementById("hamburger");
+    const drawerBg = document.getElementById("drawerBg");
+    const drawerClose = document.getElementById("drawerClose");
+
+    function openDrawer() {
+      drawer.classList.add("show");
+      hamburger.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove("show");
+      hamburger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    hamburger.addEventListener("click", openDrawer);
+    drawerBg.addEventListener("click", closeDrawer);
+    drawerClose.addEventListener("click", closeDrawer);
+    drawer.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeDrawer);
+    });
+
+    document.querySelectorAll(".accordion-toggle").forEach(button => {
+      button.addEventListener("click", () => {
+        const item = button.closest(".accordion-item");
+        item.classList.toggle("open");
+      });
+    });
+
+    const searchInput = document.getElementById("globalSearch");
+    const searchableItems = Array.from(document.querySelectorAll("[data-search]"));
+
+    searchInput.addEventListener("input", (event) => {
+      const value = event.target.value.trim().toLowerCase();
+
+      searchableItems.forEach(item => {
+        item.style.outline = "";
+        item.style.boxShadow = "";
+      });
+
+      if (!value) return;
+
+      searchableItems.forEach(item => {
+        if (item.innerText.toLowerCase().includes(value)) {
+          item.style.outline = "2px solid rgba(30,123,123,.35)";
+          item.style.boxShadow = "0 0 0 4px rgba(30,123,123,.10)";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
