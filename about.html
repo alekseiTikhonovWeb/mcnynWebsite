@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About MNCYN – Maternal, Newborn, Child and Youth Network</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --teal:#1e7b7b;
+  --clay:#c2603b;
+  --navy:#152535;
+  --ink:#1c2730;
+  --smoke:#5a6a72;
+  --paper:#faf8f5;
+  --linen:#f2ede6;
+  --white:#ffffff;
+  --r-md:14px;
+  --r-lg:24px;
+  --sh:0 8px 30px rgba(21,37,53,.08);
+  --mw:1220px;
+  --px:clamp(1.25rem,5vw,3rem);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Work Sans',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.7;
+}
+.wrap{max-width:var(--mw);margin:auto;padding:0 var(--px);}
+h1,h2,h3{font-family:'Fraunces',serif;color:var(--navy);}
+h1{font-size:clamp(2.2rem,4vw,3rem);font-style:italic;margin-bottom:1rem}
+h2{font-size:clamp(1.6rem,3vw,2.2rem);font-style:italic;margin-bottom:1.5rem}
+section{padding:clamp(3rem,6vw,5rem) 0}
+
+/* Header */
+header{
+  position:sticky;top:0;background:rgba(250,248,245,.95);
+  backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.05);
+  z-index:50;
+}
+.header-wrap{display:flex;align-items:center;height:62px}
+.site-logo{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:600;color:var(--navy)}
+.primary-nav{margin-left:auto;display:flex;gap:1.5rem}
+.primary-nav a{font-size:.85rem;font-weight:500;color:var(--smoke);text-decoration:none}
+.primary-nav a:hover{color:var(--teal)}
+
+/* Hero */
+#about-hero{background:var(--linen)}
+.about-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.about-hero-text p{max-width:520px;color:var(--smoke);margin-top:1rem}
+.about-hero-visual{
+  height:320px;border-radius:var(--r-lg);
+  background:linear-gradient(135deg,var(--teal),var(--clay));
+  box-shadow:var(--sh);
+}
+
+/* Values */
+.values-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;
+}
+.value-card{
+  background:var(--white);
+  padding:2rem;
+  border-radius:var(--r-lg);
+  box-shadow:var(--sh);
+}
+.value-card h3{font-size:1.1rem;margin-bottom:.6rem}
+.value-card p{font-size:.9rem;color:var(--smoke)}
+
+/* Governance Accordion */
+.accordion-item{
+  background:var(--white);
+  border-radius:var(--r-md);
+  margin-bottom:1rem;
+  box-shadow:var(--sh);
+}
+.accordion-header{
+  padding:1.2rem 1.5rem;
+  cursor:pointer;
+  font-weight:600;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.accordion-content{
+  padding:0 1.5rem 1.5rem;
+  display:none;
+  font-size:.9rem;
+  color:var(--smoke);
+}
+.accordion-item.active .accordion-content{display:block}
+
+/* Strategy */
+.strategy-steps{
+  display:flex;
+  justify-content:space-between;
+  gap:2rem;
+  text-align:center;
+}
+.step{
+  flex:1;
+}
+.step strong{
+  display:block;
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  color:var(--teal);
+  margin-bottom:.5rem;
+}
+
+/* Partners */
+.partners-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.partner-card{
+  background:var(--white);
+  padding:2rem;
+  border-radius:var(--r-lg);
+  box-shadow:var(--sh);
+  text-align:center;
+  font-weight:500;
+  color:var(--smoke);
+}
+
+/* Responsive */
+@media(max-width:1000px){
+  .values-grid{grid-template-columns:1fr 1fr}
+  .partners-grid{grid-template-columns:1fr 1fr}
+  .strategy-steps{flex-direction:column}
+}
+@media(max-width:700px){
+  .about-hero-inner{grid-template-columns:1fr}
+  .values-grid{grid-template-columns:1fr}
+  .partners-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap header-wrap">
+    <a href="index.html" class="site-logo">MNCYN</a>
+    <nav class="primary-nav">
+      <a href="index.html">Home</a>
+        <a href="about.html">Programs</a>
+      <a href="#">Resources</a>
+      <a href="#">Education</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section id="about-hero">
+  <div class="wrap about-hero-inner">
+    <div class="about-hero-text">
+      <h1>About MNCYN</h1>
+      <p>
+        The Maternal, Newborn, Child and Youth Network (MNCYN) brings together hospitals, healthcare providers, and community agencies across Southwestern Ontario to strengthen coordinated care for families.
+      </p>
+    </div>
+    <div class="about-hero-visual"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Our Values</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>Quality Outcomes</h3>
+        <p>Promoting consistent, evidence-based maternal and paediatric care.</p>
+      </div>
+      <div class="value-card">
+        <h3>Collaboration</h3>
+        <p>Strengthening partnerships across hospitals and community providers.</p>
+      </div>
+      <div class="value-card">
+        <h3>Equity</h3>
+        <p>Supporting accessible and culturally responsive care delivery.</p>
+      </div>
+      <div class="value-card">
+        <h3>Continuous Learning</h3>
+        <p>Encouraging professional development and system improvement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Governance</h2>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Regional Steering Committee <span>+</span></div>
+      <div class="accordion-content">
+        Provides strategic oversight and direction aligned with provincial health priorities.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Executive Committee <span>+</span></div>
+      <div class="accordion-content">
+        Guides operational planning, implementation and evaluation of regional initiatives.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Program Committees <span>+</span></div>
+      <div class="accordion-content">
+        Focused working groups supporting Perinatal and Paediatric program development.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Strategic Approach</h2>
+    <div class="strategy-steps">
+      <div class="step">
+        <strong>Assess</strong>
+        Identify regional needs.
+      </div>
+      <div class="step">
+        <strong>Plan</strong>
+        Develop coordinated strategies.
+      </div>
+      <div class="step">
+        <strong>Implement</strong>
+        Support provider networks.
+      </div>
+      <div class="step">
+        <strong>Measure</strong>
+        Evaluate outcomes and improve.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Partners</h2>
+    <div class="partners-grid">
+      <div class="partner-card">Regional Hospitals</div>
+      <div class="partner-card">Community Agencies</div>
+      <div class="partner-card">Provincial Health Authorities</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+document.querySelectorAll(".accordion-header").forEach(header=>{
+  header.addEventListener("click",()=>{
+    header.parentElement.classList.toggle("active");
+  });
+});
+</script>
+
+</body>
+</html>
