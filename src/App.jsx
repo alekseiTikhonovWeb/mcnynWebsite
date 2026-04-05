@@ -3,13 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
-import HomePage from './pages/HomePage.jsx';
-import AboutPage from './pages/AboutPage.jsx';
-import ProgramsPage from './pages/ProgramsPage.jsx';
-import EducationPage from './pages/EducationPage.jsx';
-import EventsPage from './pages/EventsPage.jsx';
-import ResourcesPage from './pages/ResourcesPage.jsx';
-import ContactPage from './pages/ContactPage.jsx';
+import HomePage from './pages/Home/index.jsx';
+import AboutPage from './pages/About/index.jsx';
+import ProgramsPage from './pages/Programs/index.jsx';
+import EducationPage from './pages/Education/index.jsx';
+import EventsPage from './pages/Events/index.jsx';
+import ResourcesPage from './pages/Resources/index.jsx';
+import ContactPage from './pages/Contact/index.jsx';
 
 function App() {
   return (

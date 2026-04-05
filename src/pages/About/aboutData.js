@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
-
 // ─── Team data (bios rendered in modal) ───────────────────────────────────────
-const teamData = {
+export const teamData = {
   claire: {
     name: 'Claire Martin',
     title: 'Director, MNCYN',
@@ -84,17 +82,17 @@ const teamData = {
   },
 };
 
-const coreTeam = ['claire', 'stacy', 'kristine', 'gwen', 'kendra'];
-const medicalTeam = ['kevin', 'jordan', 'henry', 'paige', 'rahul', 'roderick', 'meagan'];
+export const coreTeam = ['claire', 'stacy', 'kristine', 'gwen', 'kendra'];
+export const medicalTeam = ['kevin', 'jordan', 'henry', 'paige', 'rahul', 'roderick', 'meagan'];
 
-const pillars = [
+export const pillars = [
   { title: 'Improve Health Outcomes', desc: 'Systematic improvements in health promotion, illness prevention, acute and follow-up care and patient safety across the region.' },
   { title: 'Seamless Systems Integration', desc: 'Improved communication, program planning, and support resulting in greater coordination across partner organizations.' },
   { title: 'Better Operational Management', desc: 'Improved asset management within the organization and across the region resulting in greater return on investment.' },
   { title: 'Enhanced Learning & Growth', desc: 'Promoting and advocating for a consistent standard of care throughout the region.' },
 ];
 
-const history = [
+export const historyData = [
   { decade: "1970's", label: 'Birth', body: 'Established in 1979 at St. Joseph\'s Hospital, London, Ontario, the Program was the vision of Dr. Graham W. Chance, a Neonatologist. A collaborative and multidisciplinary approach was undertaken to provide perinatal education and support to 33 regional hospitals in the southwest catchment area.' },
   { decade: "1980's", label: 'Beginnings', body: 'The program focused on building relationships with regional hospitals and promoting collaboration through the organization of district perinatal nurse leaders, standardized chart forms, maternal newborn education, and a regional obstetrics database. The Canadian Perinatal Programs Coalition (CPPC) was created in 1989.' },
   { decade: "1990's", label: 'Challenges', body: 'Despite economic recession and hospital amalgamations, the Perinatal Outreach Program maintained ongoing support and was identified by the Ministry of Health as an exemplary model for perinatal education. A Regional Perinatal Care Steering Committee was established in 1998.' },
@@ -102,183 +100,3 @@ const history = [
   { decade: "2010's", label: 'Rebirth & Renewal', body: 'In 2011, the city-wide merger of Perinatal and Women\'s Health Programs was completed with the Program moved to LHSC. MNCYN celebrated its 40th anniversary in 2019.' },
   { decade: "2020's", label: 'Expansion', body: 'Ministry of Health LHINs\' boundaries changed and expanded geographically. A unified proposal was made by PCMCH and key stakeholders including MNCYN to develop a "Network of Networks" across Ontario. A rebranding project launched a new logo and website.' },
 ];
-
-// ─── Component ────────────────────────────────────────────────────────────────
-function AboutPage() {
-  const [activeKey, setActiveKey] = useState(null);
-
-  const openModal = (key) => { setActiveKey(key); document.body.style.overflow = 'hidden'; };
-  const closeModal = () => { setActiveKey(null); document.body.style.overflow = ''; };
-
-  useEffect(() => {
-    const onKey = (e) => { if (e.key === 'Escape') closeModal(); };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, []);
-
-  const member = activeKey ? teamData[activeKey] : null;
-
-  return (
-    <>
-      {/* ══════════════════════════════════════════
-           PAGE HERO
-      ══════════════════════════════════════════ */}
-      <section className="page-hero" aria-label="Who We Are">
-        <div className="wrap page-hero-inner">
-          <span className="page-hero-kicker">Our Organization</span>
-          <h1>Who We Are</h1>
-          <p>
-            MNCYN brings together perinatal and paediatric health care providers from across the region with the shared goal of keeping care as close to home as possible.
-          </p>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════
-           MISSION
-      ══════════════════════════════════════════ */}
-      <section className="about-mission" aria-label="Our mission">
-        <div className="wrap">
-          <div className="about-mission-inner">
-            <p className="section-eyebrow">Our Mission</p>
-            <blockquote className="mission-pull">
-              "We collaborate to share resources, deliver education and consultation, support networking across organizations, and promote quality improvement initiatives aimed at strengthening care for families."
-            </blockquote>
-            <p style={{ color: 'var(--smoke)', fontSize: '1rem', lineHeight: 1.75, maxWidth: '72ch' }}>
-              MNCYN fulfills its mission by supporting consistent, safe, quality maternal, newborn, child, and youth care across our region — through partnerships, shared governance, and a commitment to improving outcomes for patients and families.
-            </p>
-          </div>
-
-          <div className="about-pillars" style={{ marginTop: '2rem' }}>
-            {pillars.map(({ title, desc }) => (
-              <div className="pillar-item" key={title}>
-                <h3>{title}</h3>
-                <p>{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════
-           CORE TEAM
-      ══════════════════════════════════════════ */}
-      <section className="about-team-section" aria-label="MNCYN Team">
-        <div className="wrap">
-          <p className="section-eyebrow">Our People</p>
-          <h2 className="section-h2">MNCYN Team</h2>
-          <p style={{ color: 'var(--smoke)', fontSize: '.95rem', marginTop: '.5rem', maxWidth: '60ch' }}>
-            Click any team member to read their full bio.
-          </p>
-
-          <div className="team-grid-clean" style={{ marginTop: '1.5rem' }}>
-            {coreTeam.map((key) => {
-              const m = teamData[key];
-              return (
-                <button
-                  key={key}
-                  className="team-card-clean"
-                  onClick={() => openModal(key)}
-                  aria-label={`Read bio for ${m.name}`}
-                  style={{ background: 'none', border: 'none', padding: 0, textAlign: 'left' }}
-                >
-                  <div className="team-card-clean" style={{ pointerEvents: 'none' }}>
-                    {m.photo
-                      ? <img src={m.photo} alt={m.name} className="team-card-photo" />
-                      : <div className="team-card-photo-placeholder" aria-hidden="true" />
-                    }
-                    <div className="team-card-body">
-                      <h3>{m.name}</h3>
-                      <p>{m.title}</p>
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Medical Consultants */}
-          <p className="section-eyebrow" style={{ marginTop: '2.5rem' }}>Medical Consultants</p>
-          <h2 className="section-h2">Physician &amp; Medical Team</h2>
-          <div className="team-grid-clean" style={{ marginTop: '2rem' }}>
-            {medicalTeam.map((key) => {
-              const m = teamData[key];
-              return (
-                <button
-                  key={key}
-                  className="team-card-clean"
-                  onClick={() => openModal(key)}
-                  aria-label={`Read bio for ${m.name}`}
-                  style={{ background: 'none', border: 'none', padding: 0, textAlign: 'left' }}
-                >
-                  <div className="team-card-clean team-card-clean--medical" style={{ pointerEvents: 'none' }}>
-                    {m.photo
-                      ? <img src={m.photo} alt={m.name} className="team-card-photo" />
-                      : <div className="team-card-photo-placeholder" aria-hidden="true" />
-                    }
-                    <div className="team-card-body">
-                      <h3>{m.name}</h3>
-                      <p>{m.title}</p>
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════
-           HISTORY TIMELINE
-      ══════════════════════════════════════════ */}
-      <section className="about-history" aria-label="Our history">
-        <div className="wrap">
-          <p className="section-eyebrow">Our Journey</p>
-          <h2 className="section-h2">History</h2>
-          <p style={{ color: 'var(--smoke)', fontSize: '.95rem', marginTop: '.5rem', marginBottom: '1rem', maxWidth: '60ch' }}>
-            From a single perinatal outreach program in 1979 to a regional network serving all of South West Ontario.
-          </p>
-
-          <div className="timeline-clean">
-            {history.map(({ decade, label, body }) => (
-              <div className="tl-item" key={decade}>
-                <span className="tl-decade">
-                  {decade.slice(0, -1)}
-                  <small style={{ fontSize: '0.85em', textTransform: 'lowercase' }}>{decade.slice(-1)}</small>
-                </span>
-                <h3 className="tl-title">{label}</h3>
-                <p className="tl-body">{body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════
-           MODAL
-      ══════════════════════════════════════════ */}
-      {member && (
-        <div className="modal-overlay" onClick={closeModal} role="dialog" aria-modal="true" aria-label={member.name}>
-          <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal} aria-label="Close">&times;</button>
-            <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
-              {member.photo && (
-                <img
-                  src={member.photo}
-                  alt={member.name}
-                  style={{ width: 90, height: 110, objectFit: 'cover', objectPosition: 'top', borderRadius: 'var(--r-sm)', flexShrink: 0, background: 'var(--linen)' }}
-                />
-              )}
-              <div>
-                <h3>{member.name}</h3>
-                <strong>{member.title}</strong>
-              </div>
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: member.bio }} />
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
-export default AboutPage;
