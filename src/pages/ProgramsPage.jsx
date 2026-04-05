@@ -55,7 +55,7 @@ function ProgramsPage() {
             {/* Perinatal */}
             <div className="prog-card-lg prog-card-lg--perinatal">
               <div className="prog-icon" style={{ background: 'rgba(0,130,155,.1)', width: 46, height: 46, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
               </div>
               <h3>Perinatal Program</h3>
               <p>
@@ -69,7 +69,7 @@ function ProgramsPage() {
             {/* Paediatric */}
             <div className="prog-card-lg prog-card-lg--paediatric">
               <div className="prog-icon" style={{ background: 'rgba(255,174,0,.1)', width: 46, height: 46, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
               </div>
               <h3>Paediatric Program</h3>
               <p>
@@ -104,7 +104,7 @@ function ProgramsPage() {
             ))}
           </div>
 
-          <div style={{ marginTop: '3rem', padding: '1.5rem 1.75rem', background: 'var(--white)', borderRadius: 'var(--r-lg)', border: '1px solid rgba(71,65,123,.1)' }}>
+          <div style={{ marginTop: '2.25rem', padding: '1.5rem 1.75rem', background: 'var(--white)', borderRadius: 'var(--r-lg)', border: '1px solid rgba(71,65,123,.1)' }}>
             <p style={{ fontSize: '.95rem', color: 'var(--smoke)', lineHeight: 1.7 }}>
               <strong style={{ color: 'var(--brand)', display: 'block', marginBottom: '.4rem', fontFamily: 'var(--ff-head)', fontStyle: 'italic', fontSize: '1.05rem' }}>RCCE — Regional Centres of Clinical Excellence</strong>
               MNCYN works in collaboration with Regional Centres of Clinical Excellence across South West Ontario. For more information, visit the{' '}
@@ -115,7 +115,7 @@ function ProgramsPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: 'var(--brand)', padding: 'clamp(2.5rem,5vw,4rem) 0' }} aria-label="Learn more">
+      <section style={{ background: 'var(--brand)', padding: 'clamp(2rem,4vw,3.25rem) 0' }} aria-label="Learn more">
         <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
           <div>
             <h2 style={{ fontFamily: 'var(--ff-head)', fontStyle: 'italic', color: 'var(--white)', fontSize: 'clamp(1.3rem,2.5vw,1.8rem)', marginBottom: '.4rem' }}>

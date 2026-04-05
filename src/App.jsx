@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header.jsx';
 import Footer from './components/Footer/Footer.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
 import HomePage from './pages/HomePage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import ProgramsPage from './pages/ProgramsPage.jsx';
@@ -13,6 +14,7 @@ import ContactPage from './pages/ContactPage.jsx';
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Header />
       <main>
         <Routes>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ArrowIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+    <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
   </svg>
 );
 
@@ -45,10 +45,6 @@ function HomePage() {
             <Link to="/resources" className="btn btn-c">Education &amp; Resources</Link>
           </div>
 
-          <div className="hero-region">
-            <span className="region-pip"></span>
-            Serving South West Ontario
-          </div>
         </div>
 
       </section>
@@ -58,7 +54,7 @@ function HomePage() {
       ══════════════════════════════════════════ */}
       <div style={{
         background: 'var(--brand)',
-        padding: 'clamp(2.5rem,5vw,3.5rem) 0',
+        padding: 'clamp(2rem,4vw,3rem) 0',
         backgroundImage: 'radial-gradient(ellipse at 0% 50%, rgba(0,130,155,.18) 0%, transparent 60%), radial-gradient(ellipse at 100% 50%, rgba(255,174,0,.08) 0%, transparent 50%)',
       }}>
         <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '3rem', alignItems: 'center' }}>
@@ -81,7 +77,7 @@ function HomePage() {
       {/* ══════════════════════════════════════════
            PROGRAMS OVERVIEW
       ══════════════════════════════════════════ */}
-      <section id="programs" aria-label="Our programs" style={{ background: 'var(--linen)', padding: 'clamp(3.5rem,7vw,6rem) 0' }}>
+      <section id="programs" aria-label="Our programs" style={{ background: 'var(--linen)', padding: 'clamp(2.5rem,6vw,4.5rem) 0' }}>
         <div className="wrap">
           <div className="programs-header">
             <div>
@@ -99,7 +95,7 @@ function HomePage() {
             <div className="prog-card prog-card--perinatal">
               <span className="prog-card-bg-char" aria-hidden="true">P</span>
               <div className="prog-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
               </div>
               <h3 className="prog-h3">Perinatal Program</h3>
               <p className="prog-desc">Supporting care for pregnant individuals, birthing families, and newborns across Southwestern Ontario. We work with obstetrical units, midwifery groups, and community partners to share consistent clinical protocols and support their teams.</p>
@@ -114,7 +110,7 @@ function HomePage() {
             <div className="prog-card prog-card--paediatric">
               <span className="prog-card-bg-char" aria-hidden="true">P</span>
               <div className="prog-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
               </div>
               <h3 className="prog-h3">Paediatric Program</h3>
               <p className="prog-desc">Working with child and youth health providers across the region to connect services, share learning, and support families navigating paediatric care — from early infancy through to adolescence.</p>
@@ -145,7 +141,7 @@ function HomePage() {
             </div>
             <div className="search-wrap">
               <span className="search-icon-wrap" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
               </span>
               <input type="search" className="search-input" placeholder="Search guidelines, toolkits, pathways…" aria-label="Search resources" />
             </div>
@@ -189,7 +185,7 @@ function HomePage() {
       {/* ══════════════════════════════════════════
            NEWSLETTER SIGNUP
       ══════════════════════════════════════════ */}
-      <section id="newsletter" aria-label="Newsletter signup" style={{ background: 'var(--brand-light)', borderTop: '1px solid rgba(71,65,123,.1)', padding: 'clamp(3.5rem,6vw,5.5rem) 0' }}>
+      <section id="newsletter" aria-label="Newsletter signup" style={{ background: 'var(--brand-light)', borderTop: '1px solid rgba(71,65,123,.1)', padding: 'clamp(2.5rem,6vw,4.5rem) 0' }}>
         <div className="wrap nl-inner">
           <div className="nl-left">
             <p className="section-eyebrow">Stay Connected</p>
