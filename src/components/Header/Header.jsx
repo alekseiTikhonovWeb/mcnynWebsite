@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <header id="header">
       <div className="wrap header-wrap">
@@ -24,9 +25,25 @@ function Header() {
           <a href="/#contact">Contact</a>
         </nav>
 
-        <button className="hamburger" id="hamburger" aria-expanded="false" aria-label="Open menu">
+        <button className="hamburger" aria-expanded={isMenuOpen} aria-label="Open menu" onClick={() => setIsMenuOpen(true)}>
           <span></span><span></span><span></span>
         </button>
+      </div>
+
+      {/* MOBILE DRAWER */}
+      <div className={`mobile-overlay ${isMenuOpen ? 'show' : ''}`}>
+        <div className="overlay-bg" onClick={() => setIsMenuOpen(false)}></div>
+        <div className="drawer">
+          <button className="drawer-close" aria-label="Close menu" onClick={() => setIsMenuOpen(false)}>&times;</button>
+          
+          <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>Who We Are</NavLink>
+          <a href="/#programs" onClick={() => setIsMenuOpen(false)}>Programs</a>
+          <a href="/#membership" onClick={() => setIsMenuOpen(false)}>Membership</a>
+          <a href="/#education" onClick={() => setIsMenuOpen(false)}>Education</a>
+          <NavLink to="/resources" onClick={() => setIsMenuOpen(false)}>Resources</NavLink>
+          <a href="/#events" onClick={() => setIsMenuOpen(false)}>Events</a>
+          <a href="/#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
+        </div>
       </div>
     </header>
   );

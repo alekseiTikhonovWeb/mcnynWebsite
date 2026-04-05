@@ -267,7 +267,7 @@
     /* ─────────────────────────────────────────────
        HERO
     ───────────────────────────────────────────── */
-    #hero {
+    .resources-hero {
       padding: clamp(3rem, 6vw, 4.8rem) 0 clamp(2rem, 5vw, 3rem);
       background: var(--paper);
     }
