@@ -3,17 +3,19 @@
        TOKENS
     ───────────────────────────────────────────── */
     :root {
-      --teal: #1e7b7b;
-      --teal-dark: #155858;
-      --teal-light: #e4f4f2;
-      --teal-mid: #c0e6e3;
+      --teal: #00829B;
+      --teal-dark: #004E5D;
+      --teal-light: #E0F4F7;
+      --teal-mid: #70C6D5;
 
-      --clay: #c2603b;
-      --clay-dark: #9e4527;
-      --clay-light: #f5e8e2;
+      --clay: #FFAE00;
+      --clay-dark: #CC8B00;
+      --clay-light: #FFF8E5;
 
-      --navy: #152535;
-      --navy-mid: #1e3a52;
+      --navy: #47417B;
+      --navy-mid: #686295;
+
+      --header-h: 76px;
 
       --ink: #1c2730;
       --smoke: #5a6a72;
@@ -135,7 +137,7 @@
       display: flex;
       align-items: center;
       gap: 1.5rem;
-      min-height: 76px;
+      height: var(--header-h);
     }
 
     .brand {
@@ -268,8 +270,18 @@
        HERO
     ───────────────────────────────────────────── */
     .resources-hero {
-      padding: clamp(3rem, 6vw, 4.8rem) 0 clamp(2rem, 5vw, 3rem);
+      min-height: calc(90vh - var(--header-h));
+      display: flex;
+      align-items: center;
+      padding: clamp(2rem, 5vw, 3rem) 0;
       background: var(--paper);
+    }
+
+    @media (max-width: 900px) {
+      .resources-hero {
+        min-height: auto;
+        padding: 3rem 0;
+      }
     }
 
     .hero-card {
@@ -699,17 +711,17 @@
      STYLES
   ───────────────────────────────────────────── */
   :root {
-    --teal:       #1e7b7b;
-    --teal-dark:  #155858;
-    --teal-light: #e4f4f2;
-    --teal-mid:   #c0e6e3;
+    --teal:       #00829B;
+    --teal-dark:  #004E5D;
+    --teal-light: #E0F4F7;
+    --teal-mid:   #70C6D5;
 
-    --clay:       #c2603b;   /* the human choice — warm terracotta */
-    --clay-light: #f5e8e2;
-    --clay-dark:  #9e4527;
+    --clay:       #FFAE00;   /* previously clay/terracotta */
+    --clay-light: #FFF8E5;
+    --clay-dark:  #CC8B00;
 
-    --navy:       #152535;
-    --navy-mid:   #1e3a52;
+    --navy:       #47417B;
+    --navy-mid:   #686295;
 
     --ink:        #1c2730;   /* near-black body text */
     --smoke:      #5a6a72;   /* secondary text */
@@ -860,7 +872,7 @@
      Image bleeds to left edge. Headline large.
   ───────────────────────────────────────────── */
   #hero {
-    min-height: calc(100vh - 62px);
+    min-height: calc(90vh - var(--header-h));
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
     background: var(--paper);
