@@ -9,45 +9,44 @@ function ResourcesPage() {
       
 
     {/* HERO */}
-    <section className="resources-hero">
-      <div className="wrap hero-card">
-        <div className="hero-copy">
-          <p className="section-eyebrow">Resource library</p>
-          <h1 className="page-title">Resources for providers and partners</h1>
+    <section className="page-hero" aria-label="Resources">
+      <div className="wrap page-hero-inner" style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: '2.5rem', alignItems: 'center' }}>
+        <div>
+          <span className="page-hero-kicker">Clinical Library</span>
+          <h1>Resources for Providers &amp; Partners</h1>
           <p>
-            Access local documents, clinical forms, partner-only materials, and trusted external links that support
-            perinatal and paediatric care across the region.
+            Access local documents, clinical forms, partner-only materials, and trusted external links that support perinatal and paediatric care across the region.
           </p>
         </div>
 
-        <div className="hero-side">
-          <div className="search-title">Search the library</div>
-          <div className="search-row">
+        <div style={{ background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.15)', borderRadius: 'var(--r-lg)', padding: '1.4rem', backdropFilter: 'blur(8px)' }}>
+          <div className="search-title" style={{ color: 'rgba(255,255,255,.55)', marginBottom: '.8rem' }}>Search the library</div>
+          <div className="search-row" style={{ marginBottom: '1rem' }}>
             <span className="search-icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
             </span>
-            <input id="globalSearch" type="search" placeholder="Search measles, forms, links..." aria-label="Search resources" />
+            <input id="globalSearch" type="search" placeholder="Search measles, forms, links..." aria-label="Search resources"
+              style={{ background: 'rgba(255,255,255,.12)', borderColor: 'rgba(255,255,255,.25)', color: '#fff' }} />
           </div>
 
           <div className="jump-grid">
-            <a className="jump-link" href="#partner">
-              <strong>Partner Resources</strong>
-              <span>Secure portal materials</span>
+            <a className="jump-link" href="#partner" style={{ background: 'rgba(255,255,255,.08)', borderColor: 'rgba(255,255,255,.15)' }}>
+              <strong style={{ color: '#fff' }}>Partner Resources</strong>
+              <span style={{ color: 'rgba(255,255,255,.55)' }}>Secure portal materials</span>
             </a>
-            <a className="jump-link" href="#measles">
-              <strong>Measles Resources</strong>
-              <span>Local PDFs and updates</span>
+            <a className="jump-link" href="#measles" style={{ background: 'rgba(255,255,255,.08)', borderColor: 'rgba(255,255,255,.15)' }}>
+              <strong style={{ color: '#fff' }}>Measles Resources</strong>
+              <span style={{ color: 'rgba(255,255,255,.55)' }}>Local PDFs and updates</span>
             </a>
-            <a className="jump-link" href="#competency">
-              <strong>Competency Tools</strong>
-              <span>Partner-only downloads</span>
+            <a className="jump-link" href="#competency" style={{ background: 'rgba(255,255,255,.08)', borderColor: 'rgba(255,255,255,.15)' }}>
+              <strong style={{ color: '#fff' }}>Competency Tools</strong>
+              <span style={{ color: 'rgba(255,255,255,.55)' }}>Partner-only downloads</span>
             </a>
-            <a className="jump-link" href="#forms">
-              <strong>Forms &amp; Guidelines</strong>
-              <span>Local clinical PDFs</span>
+            <a className="jump-link" href="#forms" style={{ background: 'rgba(255,255,255,.08)', borderColor: 'rgba(255,255,255,.15)' }}>
+              <strong style={{ color: '#fff' }}>Forms &amp; Guidelines</strong>
+              <span style={{ color: 'rgba(255,255,255,.55)' }}>Local clinical PDFs</span>
             </a>
           </div>
         </div>
@@ -55,13 +54,13 @@ function ResourcesPage() {
     </section>
 
     {/* CONTENT */}
-    <section id="content">
+    <section id="content" style={{ background: 'var(--linen)' }}>
       <div className="wrap content-grid">
 
         {/* PARTNER RESOURCES */}
         <section className="section-card" id="partner" data-search>
           <div className="section-head">
-            <span className="pill pill-clay">Partner Resources</span>
+            <span className="pill pill-gold">Partner Resources</span>
             <h2>Partner Resources</h2>
             <p>
               Some resources remain restricted to MNCYN partner access.
@@ -73,7 +72,7 @@ function ResourcesPage() {
               <div className={`accordion-item ${openItems['partner'] ? 'open' : ''}`}>
                 <button className="accordion-toggle" type="button" onClick={() => toggle('partner')}>
                   <span className="accordion-label">
-                    <span className="accordion-dot clay"></span>
+                    <span className="accordion-dot gold"></span>
                     <span>Open Partner Resources</span>
                   </span>
                   <span className="accordion-arrow">›</span>
@@ -257,7 +256,7 @@ function ResourcesPage() {
         {/* NURSE COMPETENCY TOOLS */}
         <section className="section-card" id="competency" data-search>
           <div className="section-head">
-            <span className="pill pill-navy">Nurse Competency Tools</span>
+            <span className="pill pill-brand">Nurse Competency Tools</span>
             <h2>Nurse Competency Tools</h2>
             <p>
               This section remains visible for structure and content continuity, but the actual downloads are still limited to
@@ -302,7 +301,7 @@ function ResourcesPage() {
               <div className={`accordion-item ${openItems['paediatric'] ? 'open' : ''}`}>
                 <button className="accordion-toggle" type="button" onClick={() => toggle('paediatric')}>
                   <span className="accordion-label">
-                    <span className="accordion-dot clay"></span>
+                    <span className="accordion-dot gold"></span>
                     <span>Core Paediatric Competency Indicator Tool</span>
                   </span>
                   <span className="accordion-arrow">›</span>
@@ -339,7 +338,7 @@ function ResourcesPage() {
               <div className={`accordion-item ${openItems['forms'] ? 'open' : ''}`}>
                 <button className="accordion-toggle" type="button" onClick={() => toggle('forms')}>
                   <span className="accordion-label">
-                    <span className="accordion-dot navy"></span>
+                    <span className="accordion-dot brand"></span>
                     <span>Open Forms &amp; Guidelines</span>
                   </span>
                   <span className="accordion-arrow">›</span>
@@ -485,7 +484,7 @@ function ResourcesPage() {
         {/* RESOURCE LINKS */}
         <section className="section-card" id="resource-links" data-search>
           <div className="section-head">
-            <span className="pill pill-navy">Resource Links</span>
+            <span className="pill pill-brand">Resource Links</span>
             <h2>Resource Links</h2>
             <p>
               External links below were pulled from the uploaded spreadsheet of hyperlinks and added directly into the page.
@@ -497,7 +496,7 @@ function ResourcesPage() {
               <div className={`accordion-item ${openItems['links'] ? 'open' : ''}`}>
                 <button className="accordion-toggle" type="button" onClick={() => toggle('links')}>
                   <span className="accordion-label">
-                    <span className="accordion-dot navy"></span>
+                    <span className="accordion-dot brand"></span>
                     <span>Open Resource Links</span>
                   </span>
                   <span className="accordion-arrow">›</span>

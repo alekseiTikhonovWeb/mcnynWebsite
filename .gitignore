@@ -5,3 +5,17 @@ dist
 *.html
 !index.html
 !public/index.html
+
+
+# Claude folders
+.claude/
+claude*/
+
+# Ignore PDFs and text files (except in public folder)
+*.pdf
+!public/*.pdf
+!public/**/*.pdf
+
+*.txt
+!public/*.txt
+!public/**/*.txt

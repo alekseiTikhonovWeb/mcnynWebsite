@@ -12,17 +12,12 @@ function Header() {
         </Link>
 
         <nav className="primary-nav" aria-label="Main navigation">
-          <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>
-            Who We Are
-          </NavLink>
-          <a href="/#programs">Programs</a>
-          <a href="/#membership">Membership</a>
-          <a href="/#education">Education</a>
-          <NavLink to="/resources" className={({ isActive }) => (isActive ? 'active' : '')}>
-            Resources
-          </NavLink>
-          <a href="/#events">Events</a>
-          <a href="/#contact">Contact</a>
+          <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>Who We Are</NavLink>
+          <NavLink to="/programs" className={({ isActive }) => (isActive ? 'active' : '')}>Programs</NavLink>
+          <NavLink to="/education" className={({ isActive }) => (isActive ? 'active' : '')}>Education</NavLink>
+          <NavLink to="/events" className={({ isActive }) => (isActive ? 'active' : '')}>Events</NavLink>
+          <NavLink to="/resources" className={({ isActive }) => (isActive ? 'active' : '')}>Resources</NavLink>
+          <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>Contact</NavLink>
         </nav>
 
         <button className="hamburger" aria-expanded={isMenuOpen} aria-label="Open menu" onClick={() => setIsMenuOpen(true)}>
@@ -35,14 +30,12 @@ function Header() {
         <div className="overlay-bg" onClick={() => setIsMenuOpen(false)}></div>
         <div className="drawer">
           <button className="drawer-close" aria-label="Close menu" onClick={() => setIsMenuOpen(false)}>&times;</button>
-          
           <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>Who We Are</NavLink>
-          <a href="/#programs" onClick={() => setIsMenuOpen(false)}>Programs</a>
-          <a href="/#membership" onClick={() => setIsMenuOpen(false)}>Membership</a>
-          <a href="/#education" onClick={() => setIsMenuOpen(false)}>Education</a>
+          <NavLink to="/programs" onClick={() => setIsMenuOpen(false)}>Programs</NavLink>
+          <NavLink to="/education" onClick={() => setIsMenuOpen(false)}>Education</NavLink>
+          <NavLink to="/events" onClick={() => setIsMenuOpen(false)}>Events</NavLink>
           <NavLink to="/resources" onClick={() => setIsMenuOpen(false)}>Resources</NavLink>
-          <a href="/#events" onClick={() => setIsMenuOpen(false)}>Events</a>
-          <a href="/#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
+          <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
         </div>
       </div>
     </header>
