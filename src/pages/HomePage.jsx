@@ -20,7 +20,6 @@ function HomePage() {
             className="hero-photo-main"
             role="img"
             aria-label="Family receiving care from healthcare providers"
-            style={{ backgroundImage: "url('/images/hero_image.avif')" }}
           ></div>
         </div>
 
