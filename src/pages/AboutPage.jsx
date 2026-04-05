@@ -95,12 +95,12 @@ const pillars = [
 ];
 
 const history = [
-  { decade: '1970s', label: 'Birth', body: 'Established in 1979 at St. Joseph\'s Hospital, London, Ontario, the Program was the vision of Dr. Graham W. Chance, a Neonatologist. A collaborative and multidisciplinary approach was undertaken to provide perinatal education and support to 33 regional hospitals in the southwest catchment area.' },
-  { decade: '1980s', label: 'Beginnings', body: 'The program focused on building relationships with regional hospitals and promoting collaboration through the organization of district perinatal nurse leaders, standardized chart forms, maternal newborn education, and a regional obstetrics database. The Canadian Perinatal Programs Coalition (CPPC) was created in 1989.' },
-  { decade: '1990s', label: 'Challenges', body: 'Despite economic recession and hospital amalgamations, the Perinatal Outreach Program maintained ongoing support and was identified by the Ministry of Health as an exemplary model for perinatal education. A Regional Perinatal Care Steering Committee was established in 1998.' },
-  { decade: '2000s', label: 'Transitions', body: 'The Southwestern Ontario Perinatal Partnership (SWOPP) was reorganized to become the Maternal, Newborn, Child & Youth Network (MNCYN), which included a new paediatric education component known as the Paediatric Advancement Program (2009).' },
-  { decade: '2010s', label: 'Rebirth & Renewal', body: 'In 2011, the city-wide merger of Perinatal and Women\'s Health Programs was completed with the Program moved to LHSC. MNCYN celebrated its 40th anniversary in 2019.' },
-  { decade: '2020s', label: 'Expansion', body: 'Ministry of Health LHINs\' boundaries changed and expanded geographically. A unified proposal was made by PCMCH and key stakeholders including MNCYN to develop a "Network of Networks" across Ontario. A rebranding project launched a new logo and website.' },
+  { decade: "1970's", label: 'Birth', body: 'Established in 1979 at St. Joseph\'s Hospital, London, Ontario, the Program was the vision of Dr. Graham W. Chance, a Neonatologist. A collaborative and multidisciplinary approach was undertaken to provide perinatal education and support to 33 regional hospitals in the southwest catchment area.' },
+  { decade: "1980's", label: 'Beginnings', body: 'The program focused on building relationships with regional hospitals and promoting collaboration through the organization of district perinatal nurse leaders, standardized chart forms, maternal newborn education, and a regional obstetrics database. The Canadian Perinatal Programs Coalition (CPPC) was created in 1989.' },
+  { decade: "1990's", label: 'Challenges', body: 'Despite economic recession and hospital amalgamations, the Perinatal Outreach Program maintained ongoing support and was identified by the Ministry of Health as an exemplary model for perinatal education. A Regional Perinatal Care Steering Committee was established in 1998.' },
+  { decade: "2000's", label: 'Transitions', body: 'The Southwestern Ontario Perinatal Partnership (SWOPP) was reorganized to become the Maternal, Newborn, Child & Youth Network (MNCYN), which included a new paediatric education component known as the Paediatric Advancement Program (2009).' },
+  { decade: "2010's", label: 'Rebirth & Renewal', body: 'In 2011, the city-wide merger of Perinatal and Women\'s Health Programs was completed with the Program moved to LHSC. MNCYN celebrated its 40th anniversary in 2019.' },
+  { decade: "2020's", label: 'Expansion', body: 'Ministry of Health LHINs\' boundaries changed and expanded geographically. A unified proposal was made by PCMCH and key stakeholders including MNCYN to develop a "Network of Networks" across Ontario. A rebranding project launched a new logo and website.' },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -148,7 +148,7 @@ function AboutPage() {
             </p>
           </div>
 
-          <div className="about-pillars" style={{ marginTop: '3rem' }}>
+          <div className="about-pillars" style={{ marginTop: '2rem' }}>
             {pillars.map(({ title, desc }) => (
               <div className="pillar-item" key={title}>
                 <h3>{title}</h3>
@@ -170,7 +170,7 @@ function AboutPage() {
             Click any team member to read their full bio.
           </p>
 
-          <div className="team-grid-clean" style={{ marginTop: '2rem' }}>
+          <div className="team-grid-clean" style={{ marginTop: '1.5rem' }}>
             {coreTeam.map((key) => {
               const m = teamData[key];
               return (
@@ -197,7 +197,7 @@ function AboutPage() {
           </div>
 
           {/* Medical Consultants */}
-          <p className="section-eyebrow" style={{ marginTop: '3.5rem' }}>Medical Consultants</p>
+          <p className="section-eyebrow" style={{ marginTop: '2.5rem' }}>Medical Consultants</p>
           <h2 className="section-h2">Physician &amp; Medical Team</h2>
           <div className="team-grid-clean" style={{ marginTop: '2rem' }}>
             {medicalTeam.map((key) => {
@@ -241,7 +241,10 @@ function AboutPage() {
           <div className="timeline-clean">
             {history.map(({ decade, label, body }) => (
               <div className="tl-item" key={decade}>
-                <span className="tl-decade">{decade}</span>
+                <span className="tl-decade">
+                  {decade.slice(0, -1)}
+                  <small style={{ fontSize: '0.85em', textTransform: 'lowercase' }}>{decade.slice(-1)}</small>
+                </span>
                 <h3 className="tl-title">{label}</h3>
                 <p className="tl-body">{body}</p>
               </div>

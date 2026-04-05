@@ -153,7 +153,7 @@ function EducationPage() {
       </section>
 
       {/* RESOURCES LINK */}
-      <section style={{ background: 'var(--linen)', padding: 'clamp(2.5rem,5vw,4rem) 0' }} aria-label="Related resources">
+      <section style={{ background: 'var(--linen)', padding: 'clamp(2rem,5vw,3.5rem) 0' }} aria-label="Related resources">
         <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
           <div>
             <p className="section-eyebrow">Related</p>

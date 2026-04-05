@@ -19,34 +19,38 @@ function ResourcesPage() {
           </p>
         </div>
 
-        <div style={{ background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.15)', borderRadius: 'var(--r-lg)', padding: '1.4rem', backdropFilter: 'blur(8px)' }}>
-          <div className="search-title" style={{ color: 'rgba(255,255,255,.55)', marginBottom: '.8rem' }}>Search the library</div>
-          <div className="search-row" style={{ marginBottom: '1rem' }}>
+        <div className="hero-search-card">
+          <div className="search-title">Search the library</div>
+          <div className="hero-search-row">
             <span className="search-icon" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
             </span>
-            <input id="globalSearch" type="search" placeholder="Search measles, forms, links..." aria-label="Search resources"
-              style={{ background: 'rgba(255,255,255,.12)', borderColor: 'rgba(255,255,255,.25)', color: '#fff' }} />
+            <input 
+              id="globalSearch" 
+              type="search" 
+              placeholder="Search measles, forms, links..." 
+              aria-label="Search resources" 
+            />
           </div>
 
-          <div className="jump-grid">
-            <a className="jump-link" href="#partner" style={{ background: 'rgba(255,255,255,.08)', borderColor: 'rgba(255,255,255,.15)' }}>
-              <strong style={{ color: '#fff' }}>Partner Resources</strong>
-              <span style={{ color: 'rgba(255,255,255,.55)' }}>Secure portal materials</span>
+          <div className="hero-jump-grid">
+            <a className="hero-jump-link" href="#partner">
+              <strong>Partner Resources</strong>
+              <span>Secure portal materials</span>
             </a>
-            <a className="jump-link" href="#measles" style={{ background: 'rgba(255,255,255,.08)', borderColor: 'rgba(255,255,255,.15)' }}>
-              <strong style={{ color: '#fff' }}>Measles Resources</strong>
-              <span style={{ color: 'rgba(255,255,255,.55)' }}>Local PDFs and updates</span>
+            <a className="hero-jump-link" href="#measles">
+              <strong>Measles Resources</strong>
+              <span>Local PDFs and updates</span>
             </a>
-            <a className="jump-link" href="#competency" style={{ background: 'rgba(255,255,255,.08)', borderColor: 'rgba(255,255,255,.15)' }}>
-              <strong style={{ color: '#fff' }}>Competency Tools</strong>
-              <span style={{ color: 'rgba(255,255,255,.55)' }}>Partner-only downloads</span>
+            <a className="hero-jump-link" href="#competency">
+              <strong>Competency Tools</strong>
+              <span>Partner-only downloads</span>
             </a>
-            <a className="jump-link" href="#forms" style={{ background: 'rgba(255,255,255,.08)', borderColor: 'rgba(255,255,255,.15)' }}>
-              <strong style={{ color: '#fff' }}>Forms &amp; Guidelines</strong>
-              <span style={{ color: 'rgba(255,255,255,.55)' }}>Local clinical PDFs</span>
+            <a className="hero-jump-link" href="#forms">
+              <strong>Forms &amp; Guidelines</strong>
+              <span>Local clinical PDFs</span>
             </a>
           </div>
         </div>
