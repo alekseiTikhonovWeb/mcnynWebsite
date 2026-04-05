@@ -63,8 +63,8 @@ function HomePage() {
       <strong className="stat-num" style={{fontSize: "clamp(1.6rem,3vw,2.4rem)", letterSpacing: "-.01em", }}>SW Ont.</strong>
       <span className="stat-label">Regional reach, from Windsor<br />to Guelph and beyond</span>
     </div>
-    <div className="stat-block" style={{background: "rgba(30,123,123,.07)", }}>
-      <strong className="stat-num" style={{fontSize: "clamp(1.4rem,2.5vw,2rem)", letterSpacing: "0", color: "var(--teal-mid)", }}>Families first.</strong>
+    <div className="stat-block">
+      <strong className="stat-num" style={{fontSize: "clamp(1.4rem,2.5vw,2rem)", letterSpacing: "0" }}>Families first.</strong>
       <span className="stat-label">Every resource, connection,<br />and session is built around care.</span>
     </div>
   </div>
