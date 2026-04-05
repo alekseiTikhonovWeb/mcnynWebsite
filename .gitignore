@@ -19,3 +19,7 @@ claude*/
 *.txt
 !public/*.txt
 !public/**/*.txt
+
+*.docx
+!public/*.docx
+!public/**/*.docx
