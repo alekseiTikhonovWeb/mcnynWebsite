@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
-
-const RESOURCES_DATA = [
+export const RESOURCES_DATA = [
   {
     id: 'partner',
     title: 'Partner Resources',
-    pill: 'Partner Resources',
-    pillClass: 'pill-gold',
     description: 'Some resources remain restricted to MNCYN partner access.',
     items: [
       {
@@ -44,8 +40,6 @@ const RESOURCES_DATA = [
   {
     id: 'competency',
     title: 'Nurse Competency Tools',
-    pill: 'Nurse Competency Tools',
-    pillClass: 'pill-brand',
     description: 'This section remains visible for structure and content continuity, but the actual downloads are still limited to the secure partner portal.',
     subcategories: [
       {
@@ -70,8 +64,6 @@ const RESOURCES_DATA = [
   {
     id: 'forms',
     title: 'Forms & Guidelines',
-    pill: 'Forms & Guidelines',
-    pillClass: 'pill-teal',
     items: [
       { title: 'Ill Newborn Record 2022', description: 'Local PDF', type: 'PDF', link: 'content/resources/Forms-Guidelines/Ill-Newborn-Record_2022.pdf' },
       { title: 'Maternal Transfer Record', description: 'Local PDF', type: 'PDF', link: 'content/resources/Forms-Guidelines/PCMCH-Provincial-Maternal-Transfer-Record.pdf' },
@@ -94,8 +86,6 @@ const RESOURCES_DATA = [
   {
     id: 'resource-links',
     title: 'Resource Links',
-    pill: 'Resource Links',
-    pillClass: 'pill-brand',
     description: 'External links pulled from trusted sources and partner networks.',
     items: [
       { title: 'MNCYN Education Video: Management of Imminent Birth 2021', description: 'External link', type: 'Web', link: 'https://www.youtube.com/watch?v=odD4aMBV37w' },
@@ -160,247 +150,3 @@ const RESOURCES_DATA = [
     ]
   }
 ];
-
-function ResourcesPage() {
-  const [openItems, setOpenItems] = useState({});
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const toggle = (key) => setOpenItems(prev => ({ ...prev, [key]: !prev[key] }));
-
-  // Helper to get all items across categories for searching
-  const allItems = RESOURCES_DATA.flatMap(cat => {
-    const processItems = (items, subTitle) => items.map(item => ({ 
-      ...item, 
-      categoryTitle: cat.title, 
-      subCategoryTitle: subTitle,
-      categoryId: cat.id
-    }));
-
-    if (cat.items) return processItems(cat.items);
-    if (cat.subcategories) return cat.subcategories.flatMap(sub => processItems(sub.items, sub.title));
-    return [];
-  });
-
-  const filteredItems = searchQuery.trim() === '' 
-    ? [] 
-    : allItems.filter(item => 
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-
-  // Group filtered items by category
-  const groupedResults = filteredItems.reduce((acc, item) => {
-    if (!acc[item.categoryTitle]) acc[item.categoryTitle] = [];
-    acc[item.categoryTitle].push(item);
-    return acc;
-  }, {});
-
-  const renderResourceItem = (item, index) => {
-    if (item.locked) {
-      return (
-        <div className="locked-item" key={index}>
-          <div className="linkmeta">
-            <strong>{item.title}</strong>
-            <span>{item.description}</span>
-          </div>
-          <span className="taglock">Portal</span>
-        </div>
-      );
-    }
-
-    const tagClass = item.type === 'PDF' ? 'tagpdf' : 'tagweb';
-    // User requested "Download" label
-    const tagLabel = "Download";
-
-    return (
-      <div className="linkitem" key={item.link || index} style={{ cursor: 'default' }}>
-        <div className="linkmeta">
-          <strong>{item.title}</strong>
-          <span>{item.description}</span>
-        </div>
-        <a 
-          className={tagClass} 
-          href={item.link} 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          {tagLabel}
-        </a>
-      </div>
-    );
-  };
-
-  return (
-    <main>
-      {/* HERO */}
-      <section className="page-hero" aria-label="Resources">
-        <div className="wrap page-hero-inner" style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: '2.5rem', alignItems: 'center' }}>
-          <div>
-            <span className="page-hero-kicker">Clinical Library</span>
-            <h1>Resources for Providers &amp; Partners</h1>
-            <p>
-              Access local documents, clinical forms, partner-only materials, and trusted external links that support perinatal and paediatric care across the region.
-            </p>
-          </div>
-
-          <div className="hero-search-card">
-            <div className="search-title">Search the library</div>
-            <div className="hero-search-row">
-              <span className="search-icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                </svg>
-              </span>
-              <input 
-                id="globalSearch" 
-                type="search" 
-                placeholder="Search measles, forms, links..." 
-                aria-label="Search resources" 
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-
-            <div className="hero-jump-grid">
-              <a className="hero-jump-link" href="#partner" onClick={() => setSearchQuery('')}>
-                <strong>Partner Resources</strong>
-                <span>Secure portal materials</span>
-              </a>
-              <a className="hero-jump-link" href="#measles" onClick={() => setSearchQuery('')}>
-                <strong>Measles Resources</strong>
-                <span>Local PDFs and updates</span>
-              </a>
-              <a className="hero-jump-link" href="#competency" onClick={() => setSearchQuery('')}>
-                <strong>Competency Tools</strong>
-                <span>Partner-only downloads</span>
-              </a>
-              <a className="hero-jump-link" href="#forms" onClick={() => setSearchQuery('')}>
-                <strong>Forms &amp; Guidelines</strong>
-                <span>Local clinical PDFs</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CONTENT */}
-      <section id="content" className="section-flow-linen">
-        <div className="wrap content-grid">
-          
-          {searchQuery.trim() !== '' ? (
-            /* SEARCH RESULTS VIEW */
-            <div className="search-results-list" style={{ width: '100%' }}>
-              <div className="section-head" style={{ marginBottom: '2.5rem' }}>
-                <span className="pill pill-brand">Search results</span>
-                <h2>Showing results for "{searchQuery}"</h2>
-                <p>{filteredItems.length} materials matching your criteria.</p>
-              </div>
-
-              {filteredItems.length > 0 ? (
-                Object.keys(groupedResults).map(categoryTitle => (
-                  <div key={categoryTitle} className="search-category-group" style={{ marginBottom: '3rem' }}>
-                    <h3 style={{ 
-                      fontSize: '1rem', 
-                      color: 'var(--brand)', 
-                      opacity: 0.6, 
-                      textTransform: 'uppercase', 
-                      letterSpacing: '0.1em',
-                      marginBottom: '1rem',
-                      borderBottom: '1px solid rgba(0,0,0,0.05)',
-                      paddingBottom: '0.5rem'
-                    }}>
-                      {categoryTitle}
-                    </h3>
-                    <div className="linklist">
-                      {groupedResults[categoryTitle].map((item, idx) => (
-                        <div key={idx} style={{ marginBottom: '0.5rem' }}>
-                          {renderResourceItem(item, idx)}
-                          {item.subCategoryTitle && (
-                            <div style={{ fontSize: '0.7rem', color: 'var(--brand)', opacity: 0.5, marginTop: '-0.3rem', marginLeft: '1rem', marginBottom: '0.8rem' }}>
-                              Sub-category: {item.subCategoryTitle}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <div className="note-box" style={{ textAlign: 'center', padding: '4rem 2rem' }}>
-                  <strong>No materials found</strong><br />
-                  <span style={{ opacity: 0.7 }}>Try using different keywords or check your spelling.</span>
-                </div>
-              )}
-              
-              <div style={{ marginTop: '2rem', textAlign: 'center', borderTop: '1px solid rgba(0,0,0,0.05)', paddingTop: '2rem' }}>
-                <button 
-                  onClick={() => setSearchQuery('')}
-                  style={{ background: 'var(--brand)', border: 'none', color: 'var(--white)', padding: '0.7rem 1.8rem', borderRadius: '4px', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem' }}
-                >
-                  Clear search
-                </button>
-              </div>
-            </div>
-          ) : (
-            /* DEFAULT CATEGORIES VIEW */
-            RESOURCES_DATA.map((cat) => (
-              <section className="section-card" id={cat.id} key={cat.id}>
-                <div className="section-head">
-                  <span className={`pill ${cat.pillClass}`}>{cat.pill}</span>
-                  <h2>{cat.title}</h2>
-                  {cat.description && <p>{cat.description}</p>}
-                </div>
-
-                <div className="section-body">
-                  <div className="accordion">
-                    {cat.subcategories ? (
-                      cat.subcategories.map(sub => (
-                        <div className={`accordion-item ${openItems[sub.id] ? 'open' : ''}`} key={sub.id}>
-                          <button className="accordion-toggle" type="button" onClick={() => toggle(sub.id)}>
-                            <span className="accordion-label">
-                              <span className="accordion-dot brand"></span>
-                              <span>{sub.title}</span>
-                            </span>
-                            <span className="accordion-arrow">›</span>
-                          </button>
-                          <div className="accordion-content">
-                            {sub.description && <p className="muted" style={{ marginBottom: ".8rem" }}>{sub.description}</p>}
-                            <div className="linklist">
-                              {sub.items.map((item, idx) => renderResourceItem(item, idx))}
-                            </div>
-                          </div>
-                        </div>
-                      ))
-                    ) : (
-                      <div className={`accordion-item ${openItems[cat.id] ? 'open' : ''}`}>
-                        <button className="accordion-toggle" type="button" onClick={() => toggle(cat.id)}>
-                          <span className="accordion-label">
-                            <span className="accordion-dot brand"></span>
-                            <span>Open {cat.title}</span>
-                          </span>
-                          <span className="accordion-arrow">›</span>
-                        </button>
-                        <div className="accordion-content">
-                          <div className={cat.id === 'forms' ? 'split-list' : 'linklist'}>
-                            {cat.items.map((item, idx) => renderResourceItem(item, idx))}
-                          </div>
-                          {cat.note && (
-                            <div className="note-box" style={{ marginTop: '1.5rem' }}>
-                              {cat.note}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </section>
-            ))
-          )}
-        </div>
-      </section>
-    </main>
-  );
-}
-
-export default ResourcesPage;

@@ -639,17 +639,13 @@ button {
   display: inline-block;
 }
 
-.tagpdf {
+.tagpdf,
+.tagweb {
   color: var(--brand);
-  background: rgba(21, 37, 53, .06);
-  border: 1px solid rgba(21, 37, 53, .12);
+  background: rgba(71, 65, 123, .06);
+  border: 1px solid rgba(71, 65, 123, .12);
 }
 
-.tagweb {
-  color: var(--teal-dark);
-  background: rgba(30, 123, 123, .10);
-  border: 1px solid rgba(30, 123, 123, .16);
-}
 
 .tagpdf:hover,
 .tagweb:hover {
