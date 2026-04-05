@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function ResourcesPage() {
+  const [openItems, setOpenItems] = useState({});
+  const toggle = (key) => setOpenItems(prev => ({ ...prev, [key]: !prev[key] }));
+
   return (
     <main>
       
 
     {/* HERO */}
-    <section id="hero">
+    <section className="resources-hero">
       <div className="wrap hero-card">
         <div className="hero-copy">
           <p className="section-eyebrow">Resource library</p>
@@ -67,8 +70,8 @@ function ResourcesPage() {
 
           <div className="section-body">
             <div className="accordion">
-              <div className="accordion-item">
-                <button className="accordion-toggle" type="button">
+              <div className={`accordion-item ${openItems['partner'] ? 'open' : ''}`}>
+                <button className="accordion-toggle" type="button" onClick={() => toggle('partner')}>
                   <span className="accordion-label">
                     <span className="accordion-dot clay"></span>
                     <span>Open Partner Resources</span>
@@ -100,8 +103,8 @@ function ResourcesPage() {
 
           <div className="section-body">
             <div className="accordion">
-              <div className="accordion-item">
-                <button className="accordion-toggle" type="button">
+              <div className={`accordion-item ${openItems['measles'] ? 'open' : ''}`}>
+                <button className="accordion-toggle" type="button" onClick={() => toggle('measles')}>
                   <span className="accordion-label">
                     <span className="accordion-dot"></span>
                     <span>Open Measles Resources</span>
@@ -264,8 +267,8 @@ function ResourcesPage() {
 
           <div className="section-body">
             <div className="accordion">
-              <div className="accordion-item">
-                <button className="accordion-toggle" type="button">
+              <div className={`accordion-item ${openItems['perinatal'] ? 'open' : ''}`}>
+                <button className="accordion-toggle" type="button" onClick={() => toggle('perinatal')}>
                   <span className="accordion-label">
                     <span className="accordion-dot"></span>
                     <span>Perinatal Competency Indicator Tools</span>
@@ -296,8 +299,8 @@ function ResourcesPage() {
                 </div>
               </div>
 
-              <div className="accordion-item">
-                <button className="accordion-toggle" type="button">
+              <div className={`accordion-item ${openItems['paediatric'] ? 'open' : ''}`}>
+                <button className="accordion-toggle" type="button" onClick={() => toggle('paediatric')}>
                   <span className="accordion-label">
                     <span className="accordion-dot clay"></span>
                     <span>Core Paediatric Competency Indicator Tool</span>
@@ -333,8 +336,8 @@ function ResourcesPage() {
 
           <div className="section-body">
             <div className="accordion">
-              <div className="accordion-item">
-                <button className="accordion-toggle" type="button">
+              <div className={`accordion-item ${openItems['forms'] ? 'open' : ''}`}>
+                <button className="accordion-toggle" type="button" onClick={() => toggle('forms')}>
                   <span className="accordion-label">
                     <span className="accordion-dot navy"></span>
                     <span>Open Forms &amp; Guidelines</span>
@@ -491,8 +494,8 @@ function ResourcesPage() {
 
           <div className="section-body">
             <div className="accordion">
-              <div className="accordion-item">
-                <button className="accordion-toggle" type="button">
+              <div className={`accordion-item ${openItems['links'] ? 'open' : ''}`}>
+                <button className="accordion-toggle" type="button" onClick={() => toggle('links')}>
                   <span className="accordion-label">
                     <span className="accordion-dot navy"></span>
                     <span>Open Resource Links</span>
