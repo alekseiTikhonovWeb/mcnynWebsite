@@ -18,7 +18,7 @@ function ResourceCategoryAccordion({ resourcesData, openItems, onToggle, renderR
                   <div className={`accordion-item ${openItems[sub.id] ? 'open' : ''}`} key={sub.id}>
                     <button className="accordion-toggle" type="button" onClick={() => onToggle(sub.id)}>
                       <span className="accordion-label">
-                        <span className="accordion-dot brand"></span>
+                        <span className="accordion-dot gold"></span>
                         <span>{sub.title}</span>
                       </span>
                       <span className="accordion-arrow">›</span>
@@ -35,7 +35,7 @@ function ResourceCategoryAccordion({ resourcesData, openItems, onToggle, renderR
                 <div className={`accordion-item ${openItems[cat.id] ? 'open' : ''}`}>
                   <button className="accordion-toggle" type="button" onClick={() => onToggle(cat.id)}>
                     <span className="accordion-label">
-                      <span className="accordion-dot brand"></span>
+                      <span className="accordion-dot gold"></span>
                       <span>Open {cat.title}</span>
                     </span>
                     <span className="accordion-arrow">›</span>
