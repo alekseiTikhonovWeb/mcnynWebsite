@@ -141,7 +141,7 @@ button {
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
-  border: 1px solid rgba(0, 0, 0, .06);
+  border: 1px solid rgba(0, 0, 0, .10);
   background: rgba(255, 255, 255, .7);
 }
 
@@ -344,7 +344,7 @@ button {
 .hero-copy,
 .hero-side {
   background: var(--white);
-  border: 1px solid rgba(30, 123, 123, .12);
+  border: 1px solid rgba(30, 123, 123, .18);
   border-radius: var(--r-lg);
   box-shadow: var(--sh-card);
 }
@@ -418,7 +418,7 @@ button {
   gap: .2rem;
   padding: .95rem 1rem;
   border-radius: var(--r-md);
-  border: 1px solid rgba(21, 37, 53, .08);
+  border: 1px solid rgba(21, 37, 53, .12);
   background: var(--paper);
   transition: transform .16s, box-shadow .16s, border-color .16s;
 }
@@ -461,7 +461,7 @@ button {
 
 .section-card {
   background: var(--white);
-  border: 1px solid rgba(30, 123, 123, .12);
+  border: 1px solid rgba(30, 123, 123, .18);
   border-radius: var(--r-lg);
   box-shadow: var(--sh-card);
   overflow: hidden;
@@ -495,7 +495,7 @@ button {
        ACCORDION
     ───────────────────────────────────────────── */
 .accordion {
-  border: 1px solid rgba(21, 37, 53, .06);
+  border: 1px solid rgba(21, 37, 53, .12);
   border-radius: var(--r-lg);
   overflow: hidden;
   background: var(--white);
@@ -503,7 +503,7 @@ button {
 }
 
 .accordion-item+.accordion-item {
-  border-top: 1px solid rgba(21, 37, 53, .06);
+  border-top: 1px solid rgba(21, 37, 53, .12);
 }
 
 .accordion-toggle {
@@ -551,7 +551,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(0, 0, 0, .06);
+  border: 1px solid rgba(0, 0, 0, .10);
   background: rgba(250, 248, 245, .8);
   color: var(--smoke);
   font-size: 1.1rem;
@@ -565,7 +565,7 @@ button {
 
 .accordion-content {
   display: none;
-  border-top: 1px solid rgba(0, 0, 0, .06);
+  border-top: 1px solid rgba(0, 0, 0, .10);
   padding: 1rem 1.1rem 1.15rem;
 }
 
@@ -590,7 +590,7 @@ button {
   gap: 1rem;
   padding: .82rem .95rem;
   border-radius: var(--r-md);
-  border: 1px solid rgba(30, 123, 123, .10);
+  border: 1px solid rgba(30, 123, 123, .18);
   background: var(--white);
 }
 
@@ -667,7 +667,7 @@ button {
   padding: 1rem 1.05rem;
   border-radius: var(--r-md);
   background: rgba(30, 123, 123, .06);
-  border: 1px solid rgba(30, 123, 123, .10);
+  border: 1px solid rgba(30, 123, 123, .16);
   color: var(--smoke);
   font-size: .92rem;
 }
@@ -1413,7 +1413,7 @@ button {
   background: var(--white);
   border-radius: var(--r-md);
   overflow: hidden;
-  border: 1px solid rgba(30, 123, 123, .1);
+  border: 1px solid rgba(30, 123, 123, .18);
   box-shadow: var(--sh-card);
   display: flex;
   flex-direction: column;
@@ -1518,7 +1518,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgba(30, 123, 123, .1);
+  border-top: 1px solid rgba(30, 123, 123, .18);
   padding-top: .85rem;
   margin-top: auto;
   font-family: var(--ff-body);
@@ -1581,7 +1581,7 @@ button {
   position: relative;
   padding: 2rem 1.75rem 1.75rem;
   box-shadow: var(--sh-card);
-  border: 1px solid rgba(0, 0, 0, .05);
+  border: 1px solid rgba(0, 0, 0, .12);
   display: flex;
   flex-direction: column;
   transition: box-shadow .22s, transform .22s;
@@ -1675,7 +1675,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: .5rem;
-  border-top: 1px solid rgba(0, 0, 0, .06);
+  border-top: 1px solid rgba(0, 0, 0, .10);
   padding-top: 1rem;
 }
 
@@ -1773,7 +1773,7 @@ button {
 
 .res-tile {
   background: var(--white);
-  border: 1.5px solid rgba(109, 74, 255, 0.1);
+  border: 1.5px solid rgba(109, 74, 255, 0.18);
   border-radius: var(--r-md);
   padding: 1.35rem 1.1rem;
   display: flex;
