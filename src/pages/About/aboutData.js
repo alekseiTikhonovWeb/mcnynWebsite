@@ -3,7 +3,7 @@ export const teamData = {
   claire: {
     name: 'Claire Martin',
     title: 'Director, MNCYN',
-    photo: 'https://mncyn.ca/wp-content/uploads/2020/09/MNCYN-Team_Claire-Martin-200x300.jpg',
+    photo: '/images/portrait-placeholder.png',
     bio: '<p>Claire Martin is the Director of the Maternal, Newborn, Child &amp; Youth Network (MNCYN).</p>',
   },
   kristine: {
@@ -24,7 +24,7 @@ export const teamData = {
   stacy: {
     name: 'Stacy Laureano-Steele',
     title: 'Manager, MNCYN',
-    photo: 'https://mncyn.ca/wp-content/uploads/2020/12/20200915_Stacy-200x300.jpg',
+    photo: '/images/portrait-placeholder.png',
     bio: '<p>Stacy Laureano-Steele is the Manager of the Maternal, Newborn, Child &amp; Youth Network.</p>',
   },
   kendra: {
@@ -57,7 +57,7 @@ export const teamData = {
   paige: {
     name: 'Dr. Paige Burgess',
     title: 'Paediatric Critical Care Medical Consultant',
-    photo: 'https://mncyn.ca/wp-content/uploads/2020/12/20200915_Paige-200x300.jpg',
+    photo: '/images/portrait-placeholder.png',
     bio: '<p>Dr. Paige Burgess serves as the Paediatric Critical Care Medical Consultant for the MNCYN.</p>',
   },
   rahul: {
@@ -77,7 +77,7 @@ export const teamData = {
   meagan: {
     name: 'Meagan Furnivall, RM',
     title: 'Midwife Medical Consultant',
-    photo: 'https://mncyn.ca/wp-content/uploads/2020/12/20200915_Meagan-200x300.jpg',
+    photo: '/images/portrait-placeholder.png',
     bio: '<p>Meagan Furnivall, RM, serves as the Midwife Medical Consultant for the MNCYN.</p>',
   },
 };

@@ -7,8 +7,7 @@ function Header() {
     <header id="header">
       <div className="wrap header-wrap">
         <Link to="/" className="brand" aria-label="Maternal, Newborn, Child & Youth Network home">
-          <span className="brand-mark">Maternal, Newborn, Child &amp; Youth Network</span>
-          <span className="brand-sub">Regional resources for perinatal and paediatric care</span>
+          <img src="/images/logo.svg" alt="Maternal, Newborn, Child & Youth Network" className="brand-logo" />
         </Link>
 
         <nav className="primary-nav" aria-label="Main navigation">
