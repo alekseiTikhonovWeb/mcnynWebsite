@@ -7,20 +7,17 @@ function TeamSection({ onOpenBio }) {
     return (
       <button
         key={key}
-        className="team-card-clean"
+        className={`team-card-clean ${isMedical ? 'team-card-clean--medical' : ''}`}
         onClick={() => onOpenBio(key)}
         aria-label={`Read bio for ${m.name}`}
-        style={{ background: 'none', border: 'none', padding: 0, textAlign: 'left' }}
       >
-        <div className={`team-card-clean ${isMedical ? 'team-card-clean--medical' : ''}`} style={{ pointerEvents: 'none' }}>
-          {m.photo
-            ? <img src={m.photo} alt={m.name} className="team-card-photo" />
-            : <div className="team-card-photo-placeholder" aria-hidden="true" />
-          }
-          <div className="team-card-body">
-            <h3>{m.name}</h3>
-            <p>{m.title}</p>
-          </div>
+        {m.photo
+          ? <img src={m.photo} alt={m.name} className="team-card-photo" />
+          : <div className="team-card-photo-placeholder" aria-hidden="true" />
+        }
+        <div className="team-card-body">
+          <h3>{m.name}</h3>
+          <p>{m.title}</p>
         </div>
       </button>
     );
