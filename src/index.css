@@ -18,7 +18,7 @@
   --purple-light: #f5f3ff;
   --purple-mid: #5a3ee6;
 
-  --header-h: 76px;
+  --header-h: 96px;
 
   --ink: #1c2730;
   --smoke: #5a6a72;
@@ -196,7 +196,7 @@ button {
 }
 
 .brand-logo {
-  height: calc(var(--header-h) - 20px);
+  height: calc(var(--header-h) - 36px);
   width: auto;
   display: block;
   transition: opacity .2s;
@@ -226,15 +226,15 @@ button {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: .25rem;
+  gap: .4rem;
   flex-wrap: wrap;
 }
 
 .primary-nav a {
-  font-size: .85rem;
+  font-size: .92rem;
   font-weight: 500;
-  color: var(--smoke);
-  padding: .45rem .85rem;
+  color: #4a5c65;
+  padding: .5rem 1rem;
   border-radius: 999px;
   transition: color .2s, background .2s;
   white-space: nowrap;
@@ -933,7 +933,7 @@ button {
 .header-wrap {
   display: flex;
   align-items: center;
-  height: 62px;
+  height: var(--header-h);
   gap: 1.5rem;
 }
 
@@ -965,16 +965,16 @@ button {
 .primary-nav {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: .4rem;
   margin-left: auto;
 }
 
 .primary-nav a {
   font-family: var(--ff-body);
-  font-size: .84rem;
+  font-size: .92rem;
   font-weight: 500;
-  color: var(--smoke);
-  padding: .38rem .6rem;
+  color: #4a5c65;
+  padding: .5rem 1rem;
   border-radius: var(--r-sm);
   transition: color .18s, background .18s;
   white-space: nowrap;
