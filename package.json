@@ -1,21 +1,18 @@
 {
   "name": "mcnynwebsite",
   "version": "1.0.0",
+  "private": true,
   "type": "module",
-  "description": "",
-  "main": "index.js",
+  "description": "Redesign of the Maternal, Newborn, Child & Youth Network (MNCYN) website: a static React + Vite front end built as a Fanshawe College client project.",
+  "license": "UNLICENSED",
   "scripts": {
-    "dev": "vite", "build": "vite build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alekseiTikhonovWeb/mcnynWebsite.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alekseiTikhonovWeb/mcnynWebsite/issues"
   },
   "homepage": "https://github.com/alekseiTikhonovWeb/mcnynWebsite#readme",
   "dependencies": {

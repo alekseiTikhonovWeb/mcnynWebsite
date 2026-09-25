@@ -1,23 +1,19 @@
-import React from 'react';
 import { teamData, coreTeam, medicalTeam } from '../aboutData';
 
 function TeamSection({ onOpenBio }) {
-  const renderCard = (key, isMedical = false) => {
-    const m = teamData[key];
+  const renderCard = (key, medical = false) => {
+    const { name, title, photo } = teamData[key];
     return (
       <button
         key={key}
-        className={`team-card-clean ${isMedical ? 'team-card-clean--medical' : ''}`}
+        className={`team-card-clean${medical ? ' team-card-clean--medical' : ''}`}
         onClick={() => onOpenBio(key)}
-        aria-label={`Read bio for ${m.name}`}
+        aria-label={`Read bio for ${name}`}
       >
-        {m.photo
-          ? <img src={m.photo} alt={m.name} className="team-card-photo" />
-          : <div className="team-card-photo-placeholder" aria-hidden="true" />
-        }
+        <img src={photo} alt={name} className="team-card-photo" loading="lazy" />
         <div className="team-card-body">
-          <h3>{m.name}</h3>
-          <p>{m.title}</p>
+          <h3>{name}</h3>
+          <p>{title}</p>
         </div>
       </button>
     );
@@ -28,18 +24,15 @@ function TeamSection({ onOpenBio }) {
       <div className="wrap">
         <p className="section-eyebrow">Our People</p>
         <h2 className="section-h2">MNCYN Team</h2>
-        <p style={{ color: 'var(--smoke)', fontSize: '.95rem', marginTop: '.5rem', maxWidth: '60ch' }}>
-          Click any team member to read their full bio.
-        </p>
+        <p className="team-intro">Click any team member to read their full bio.</p>
 
-        <div className="team-grid-clean" style={{ marginTop: '1.5rem' }}>
+        <div className="team-grid-clean team-grid-clean--tight">
           {coreTeam.map((key) => renderCard(key))}
         </div>
 
-        {/* Medical Consultants */}
-        <p className="section-eyebrow" style={{ marginTop: '2.5rem' }}>Medical Consultants</p>
+        <p className="section-eyebrow team-subhead">Medical Consultants</p>
         <h2 className="section-h2">Physician &amp; Medical Team</h2>
-        <div className="team-grid-clean" style={{ marginTop: '2rem' }}>
+        <div className="team-grid-clean">
           {medicalTeam.map((key) => renderCard(key, true))}
         </div>
       </div>

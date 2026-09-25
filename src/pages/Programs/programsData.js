@@ -1,3 +1,26 @@
+import { HeartIcon, PeopleIcon } from '../../components/icons.jsx';
+
+export const programs = [
+  {
+    id: 'perinatal',
+    name: 'Perinatal Program',
+    Icon: HeartIcon,
+    color: 'var(--teal)',
+    summary: 'Supporting care for pregnant individuals, birthing families, and newborns across Southwestern Ontario. We work with obstetrical units, midwifery groups, and community partners to share consistent clinical protocols and support their teams.',
+    description: 'The Perinatal Program supports care for pregnant individuals, birthing families, and newborns across Southwestern Ontario. We work with obstetrical units, midwifery groups, and community partners to share consistent clinical protocols, deliver education, and support clinical teams.',
+    scope: 'Covering maternity care, labour and birth, neonatal resuscitation, and postpartum support.',
+  },
+  {
+    id: 'paediatric',
+    name: 'Paediatric Program',
+    Icon: PeopleIcon,
+    color: 'var(--gold-dark)',
+    summary: 'Working with child and youth health providers across the region to connect services, share learning, and support families navigating paediatric care — from early infancy through to adolescence.',
+    description: 'The Paediatric Program works with child and youth health providers across the region to connect services, share learning, and support families navigating paediatric care — from early infancy through to adolescence.',
+    scope: 'Covering acute paediatric care, emergency medicine, critical care, and care transitions.',
+  },
+];
+
 export const deliverables = [
   {
     title: 'Education & Learning',

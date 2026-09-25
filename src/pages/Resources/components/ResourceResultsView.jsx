@@ -1,37 +1,29 @@
-import React from 'react';
+import ResourceItem from './ResourceItem.jsx';
 
-function ResourceResultsView({ searchQuery, filteredItems, groupedResults, onClear, renderResourceItem }) {
+function ResourceResultsView({ searchQuery, items, onClear }) {
+  const groups = items.reduce((acc, item) => {
+    (acc[item.categoryTitle] ??= []).push(item);
+    return acc;
+  }, {});
+
   return (
-    <div className="search-results-list" style={{ width: '100%' }}>
-      <div className="section-head" style={{ marginBottom: '2.5rem' }}>
+    <div className="search-results">
+      <div className="section-head">
         <span className="pill pill-brand">Search results</span>
         <h2>Showing results for "{searchQuery}"</h2>
-        <p>{filteredItems.length} materials matching your criteria.</p>
+        <p>{items.length} materials matching your criteria.</p>
       </div>
 
-      {filteredItems.length > 0 ? (
-        Object.keys(groupedResults).map(categoryTitle => (
-          <div key={categoryTitle} className="search-category-group" style={{ marginBottom: '3rem' }}>
-            <h3 style={{ 
-              fontSize: '1rem', 
-              color: 'var(--brand)', 
-              opacity: 0.6, 
-              textTransform: 'uppercase', 
-              letterSpacing: '0.1em',
-              marginBottom: '1rem',
-              borderBottom: '1px solid rgba(0,0,0,0.05)',
-              paddingBottom: '0.5rem'
-            }}>
-              {categoryTitle}
-            </h3>
+      {items.length > 0 ? (
+        Object.entries(groups).map(([category, list]) => (
+          <div key={category} className="search-group">
+            <h3>{category}</h3>
             <div className="linklist">
-              {groupedResults[categoryTitle].map((item, idx) => (
-                <div key={idx} style={{ marginBottom: '0.5rem' }}>
-                  {renderResourceItem(item, idx)}
+              {list.map((item, i) => (
+                <div key={i} className="search-result">
+                  <ResourceItem item={item} />
                   {item.subCategoryTitle && (
-                    <div style={{ fontSize: '0.7rem', color: 'var(--brand)', opacity: 0.5, marginTop: '-0.3rem', marginLeft: '1rem', marginBottom: '0.8rem' }}>
-                      Sub-category: {item.subCategoryTitle}
-                    </div>
+                    <div className="search-result-sub">Sub-category: {item.subCategoryTitle}</div>
                   )}
                 </div>
               ))}
@@ -39,19 +31,14 @@ function ResourceResultsView({ searchQuery, filteredItems, groupedResults, onCle
           </div>
         ))
       ) : (
-        <div className="note-box" style={{ textAlign: 'center', padding: '4rem 2rem' }}>
+        <div className="note-box search-empty">
           <strong>No materials found</strong><br />
-          <span style={{ opacity: 0.7 }}>Try using different keywords or check your spelling.</span>
+          <span>Try using different keywords or check your spelling.</span>
         </div>
       )}
-      
-      <div style={{ marginTop: '2rem', textAlign: 'center', borderTop: '1px solid rgba(0,0,0,0.05)', paddingTop: '2rem' }}>
-        <button 
-          onClick={onClear}
-          style={{ background: 'var(--brand)', border: 'none', color: 'var(--white)', padding: '0.7rem 1.8rem', borderRadius: '4px', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem' }}
-        >
-          Clear search
-        </button>
+
+      <div className="search-clear">
+        <button onClick={onClear}>Clear search</button>
       </div>
     </div>
   );

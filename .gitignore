@@ -1,25 +1,20 @@
-node_modules
-dist
+# dependencies and build output
+node_modules/
+dist/
+
+# OS / editor
 .DS_Store
-*.mjs
-*.html
-!index.html
-!public/index.html
+.vscode/
+.idea/
 
-
-# Claude folders
+# AI tooling scratch
 .claude/
+.omc/
 claude*/
 
-# Ignore PDFs and text files (except in public folder)
+# client documents live outside the repo (see README, "Content and credits")
 *.pdf
-!public/*.pdf
-!public/**/*.pdf
-
-*.txt
-!public/*.txt
-!public/**/*.txt
-
 *.docx
-!public/*.docx
-!public/**/*.docx
+*.txt
+!public/**/*.pdf
+!public/**/*.txt

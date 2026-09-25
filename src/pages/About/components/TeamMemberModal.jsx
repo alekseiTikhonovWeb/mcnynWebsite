@@ -1,5 +1,3 @@
-import React from 'react';
-
 function TeamMemberModal({ member, onClose }) {
   if (!member) return null;
 
@@ -7,14 +5,8 @@ function TeamMemberModal({ member, onClose }) {
     <div className="modal-overlay" onClick={onClose} role="dialog" aria-modal="true" aria-label={member.name}>
       <div className="modal-box" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose} aria-label="Close">&times;</button>
-        <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
-          {member.photo && (
-            <img
-              src={member.photo}
-              alt={member.name}
-              style={{ width: 90, height: 110, objectFit: 'cover', objectPosition: 'top', borderRadius: 'var(--r-sm)', flexShrink: 0, background: 'var(--linen)' }}
-            />
-          )}
+        <div className="modal-head">
+          <img src={member.photo} alt={member.name} className="modal-photo" />
           <div>
             <h3>{member.name}</h3>
             <strong>{member.title}</strong>

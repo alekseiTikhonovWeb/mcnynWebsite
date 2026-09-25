@@ -1,4 +1,4 @@
-import React from 'react';
+import { programs } from '../educationData';
 
 function EducationTabs({ activeTab, onTabChange }) {
   return (
@@ -10,22 +10,17 @@ function EducationTabs({ activeTab, onTabChange }) {
       </p>
 
       <div className="edu-tabs" role="tablist">
-        <button
-          className={`edu-tab-btn${activeTab === 'perinatal' ? ' active' : ''}`}
-          role="tab"
-          aria-selected={activeTab === 'perinatal'}
-          onClick={() => onTabChange('perinatal')}
-        >
-          Perinatal Education
-        </button>
-        <button
-          className={`edu-tab-btn${activeTab === 'paediatric' ? ' active' : ''}`}
-          role="tab"
-          aria-selected={activeTab === 'paediatric'}
-          onClick={() => onTabChange('paediatric')}
-        >
-          Paediatric Education
-        </button>
+        {programs.map(({ id, label }) => (
+          <button
+            key={id}
+            className={`edu-tab-btn${activeTab === id ? ' active' : ''}`}
+            role="tab"
+            aria-selected={activeTab === id}
+            onClick={() => onTabChange(id)}
+          >
+            {label}
+          </button>
+        ))}
       </div>
     </>
   );

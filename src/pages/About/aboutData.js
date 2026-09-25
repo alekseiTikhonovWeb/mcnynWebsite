@@ -1,4 +1,4 @@
-// ─── Team data (bios rendered in modal) ───────────────────────────────────────
+// Bios are HTML strings; TeamMemberModal renders them with dangerouslySetInnerHTML.
 export const teamData = {
   claire: {
     name: 'Claire Martin',

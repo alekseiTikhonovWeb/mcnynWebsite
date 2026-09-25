@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
+const NAV = [
+  { to: '/about', label: 'Who We Are' },
+  { to: '/programs', label: 'Programs' },
+  { to: '/education', label: 'Education' },
+  { to: '/events', label: 'Events' },
+  { to: '/resources', label: 'Resources' },
+  { to: '/contact', label: 'Contact' },
+];
+
 function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header id="header">
       <div className="wrap header-wrap">
@@ -11,30 +22,19 @@ function Header() {
         </Link>
 
         <nav className="primary-nav" aria-label="Main navigation">
-          <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>Who We Are</NavLink>
-          <NavLink to="/programs" className={({ isActive }) => (isActive ? 'active' : '')}>Programs</NavLink>
-          <NavLink to="/education" className={({ isActive }) => (isActive ? 'active' : '')}>Education</NavLink>
-          <NavLink to="/events" className={({ isActive }) => (isActive ? 'active' : '')}>Events</NavLink>
-          <NavLink to="/resources" className={({ isActive }) => (isActive ? 'active' : '')}>Resources</NavLink>
-          <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>Contact</NavLink>
+          {NAV.map(({ to, label }) => <NavLink key={to} to={to}>{label}</NavLink>)}
         </nav>
 
-        <button className="hamburger" aria-expanded={isMenuOpen} aria-label="Open menu" onClick={() => setIsMenuOpen(true)}>
+        <button className="hamburger" aria-expanded={menuOpen} aria-label="Open menu" onClick={() => setMenuOpen(true)}>
           <span></span><span></span><span></span>
         </button>
       </div>
 
-      {/* MOBILE DRAWER */}
-      <div className={`mobile-overlay ${isMenuOpen ? 'show' : ''}`}>
-        <div className="overlay-bg" onClick={() => setIsMenuOpen(false)}></div>
+      <div className={`mobile-overlay${menuOpen ? ' show' : ''}`}>
+        <div className="overlay-bg" onClick={closeMenu}></div>
         <div className="drawer">
-          <button className="drawer-close" aria-label="Close menu" onClick={() => setIsMenuOpen(false)}>&times;</button>
-          <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>Who We Are</NavLink>
-          <NavLink to="/programs" onClick={() => setIsMenuOpen(false)}>Programs</NavLink>
-          <NavLink to="/education" onClick={() => setIsMenuOpen(false)}>Education</NavLink>
-          <NavLink to="/events" onClick={() => setIsMenuOpen(false)}>Events</NavLink>
-          <NavLink to="/resources" onClick={() => setIsMenuOpen(false)}>Resources</NavLink>
-          <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
+          <button className="drawer-close" aria-label="Close menu" onClick={closeMenu}>&times;</button>
+          {NAV.map(({ to, label }) => <NavLink key={to} to={to} onClick={closeMenu}>{label}</NavLink>)}
         </div>
       </div>
     </header>

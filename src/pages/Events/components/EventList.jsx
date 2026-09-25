@@ -1,4 +1,3 @@
-import React from 'react';
 import { upcomingEvents } from '../eventsData';
 
 function EventList() {
@@ -18,13 +17,7 @@ function EventList() {
               <span className="day">{day}</span>
             </div>
             <div className="event-meta">
-              <span style={{
-                display: 'inline-block', fontSize: '.68rem', fontWeight: 700,
-                letterSpacing: '.08em', textTransform: 'uppercase',
-                color: program === 'Perinatal' ? 'var(--teal-dark)' : 'var(--gold-dark)',
-                background: program === 'Perinatal' ? 'var(--teal-light)' : 'var(--gold-light)',
-                borderRadius: 100, padding: '.18rem .55rem', marginBottom: '.4rem',
-              }}>{program}</span>
+              <span className={`program-tag program-tag--compact program-tag--${program.toLowerCase()}`}>{program}</span>
               <h4>{title}</h4>
               <p>{desc}</p>
             </div>
@@ -32,9 +25,9 @@ function EventList() {
         ))}
       </div>
 
-      <p style={{ marginTop: '1.5rem', fontSize: '.85rem', color: 'var(--fog)', lineHeight: 1.65 }}>
+      <p className="event-list-note">
         For information about past events or archived session materials, please{' '}
-        <a href="mailto:info@mncyn.ca" style={{ color: 'var(--teal)', fontWeight: 600 }}>contact us directly</a>.
+        <a href="mailto:info@mncyn.ca" className="text-link">contact us directly</a>.
       </p>
     </div>
   );

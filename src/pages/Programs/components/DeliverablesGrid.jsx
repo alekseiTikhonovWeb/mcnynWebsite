@@ -1,9 +1,8 @@
-import React from 'react';
 import { deliverables } from '../programsData';
 
 function DeliverablesGrid() {
   return (
-    <section className="page-content" style={{ background: 'var(--linen)' }} aria-label="MNCYN deliverables">
+    <section className="page-content" aria-label="MNCYN deliverables">
       <div className="wrap">
         <p className="section-eyebrow">Across Both Programs</p>
         <h2 className="page-section-title">MNCYN Deliverables</h2>
@@ -23,11 +22,11 @@ function DeliverablesGrid() {
           ))}
         </div>
 
-        <div style={{ marginTop: '2.25rem', padding: '1.5rem 1.75rem', background: 'var(--white)', borderRadius: 'var(--r-lg)', border: '1px solid rgba(71,65,123,.1)' }}>
-          <p style={{ fontSize: '.95rem', color: 'var(--smoke)', lineHeight: 1.7 }}>
-            <strong style={{ color: 'var(--brand)', display: 'block', marginBottom: '.4rem', fontFamily: 'var(--ff-head)', fontStyle: 'italic', fontSize: '1.05rem' }}>RCCE — Regional Centres of Clinical Excellence</strong>
+        <div className="rcce-note">
+          <p>
+            <strong>RCCE — Regional Centres of Clinical Excellence</strong>
             MNCYN works in collaboration with Regional Centres of Clinical Excellence across South West Ontario. For more information, visit the{' '}
-            <a href="https://mncyn.ca" style={{ color: 'var(--teal)', fontWeight: 600 }}>current MNCYN website</a>.
+            <a href="https://mncyn.ca" className="text-link">current MNCYN website</a>.
           </p>
         </div>
       </div>

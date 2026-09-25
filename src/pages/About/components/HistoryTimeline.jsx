@@ -1,4 +1,3 @@
-import React from 'react';
 import { historyData } from '../aboutData';
 
 function HistoryTimeline() {
@@ -7,7 +6,7 @@ function HistoryTimeline() {
       <div className="wrap">
         <p className="section-eyebrow">Our Journey</p>
         <h2 className="section-h2">History</h2>
-        <p style={{ color: 'var(--smoke)', fontSize: '.95rem', marginTop: '.5rem', marginBottom: '1rem', maxWidth: '60ch' }}>
+        <p className="history-intro">
           From a single perinatal outreach program in 1979 to a regional network serving all of South West Ontario.
         </p>
 
@@ -16,7 +15,7 @@ function HistoryTimeline() {
             <div className="tl-item" key={decade}>
               <span className="tl-decade">
                 {decade.slice(0, -1)}
-                <small style={{ fontSize: '0.85em', textTransform: 'lowercase' }}>{decade.slice(-1)}</small>
+                <small>{decade.slice(-1)}</small>
               </span>
               <h3 className="tl-title">{label}</h3>
               <p className="tl-body">{body}</p>
